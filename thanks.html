@@ -12,7 +12,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet"> <!-- Zarif font için -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
     <script>
     tailwind.config = {
       theme: {
@@ -29,31 +29,45 @@
     }
     </script>
     <style>
-      body { background-color: #f0fff0; }
-      #certificate { max-width: 700px; margin: 60px auto; padding: 50px; background-color: white; border: 8px double #339966; border-radius: 30px; text-align: center; box-shadow: 0 15px 40px rgba(0,102,51,0.2); position: relative; }
+      body { background-color: #f0fff0; padding: 20px; }
+      #certificate { max-width: 700px; margin: 0 auto; padding: 30px; background-color: white; border: 8px double #339966; border-radius: 30px; text-align: center; box-shadow: 0 15px 40px rgba(0,102,51,0.2); position: relative; font-size: 1rem; }
       #certificate::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(153,204,51,0.1) 0%, transparent 70%); opacity: 0.5; }
-      #certificate h1 { font-family: 'EB Garamond', serif; font-size: 3rem; color: #006633; margin-bottom: 40px; letter-spacing: 2px; }
-      #certificate .donor-name { font-family: 'EB Garamond', serif; font-size: 2.5rem; color: #339966; margin-bottom: 30px; font-style: italic; }
-      #certificate .details { font-size: 1.4rem; color: #006633; margin-bottom: 20px; }
-      #certificate .message { font-size: 1.3rem; font-style: italic; color: #5c5c5c; margin-bottom: 40px; }
-      #certificate .signature { display: flex; justify-content: space-around; margin-top: 50px; }
-      #certificate .sig { text-align: center; width: 40%; }
-      #certificate .sig .sig-line { width: 200px; height: 2px; background-color: #006633; margin: 0 auto 10px; }
-      #certificate .sig p { font-size: 1.1rem; color: #006633; }
-      #certificate .logo { width: 180px; margin: 40px auto; }
+      #certificate h1 { font-family: 'EB Garamond', serif; font-size: 2.5rem; color: #006633; margin-bottom: 30px; letter-spacing: 2px; }
+      #certificate .donor-name { font-family: 'EB Garamond', serif; font-size: 2rem; color: #339966; margin-bottom: 25px; font-style: italic; }
+      #certificate .details { font-size: 1.2rem; color: #006633; margin-bottom: 15px; }
+      #certificate .message { font-size: 1.1rem; font-style: italic; color: #5c5c5c; margin-bottom: 30px; }
+      #certificate .signature { display: flex; justify-content: space-between; margin-top: 30px; flex-wrap: wrap; }
+      #certificate .sig { text-align: center; width: 48%; margin-bottom: 20px; }
+      #certificate .sig .sig-line { width: 150px; height: 2px; background-color: #006633; margin: 0 auto 10px; }
+      #certificate .sig p { font-size: 1rem; color: #006633; }
+      #certificate .logo { width: 150px; margin: 30px auto; }
       #certificate .foundation { font-size: 1rem; color: #339966; margin-top: 20px; font-weight: bold; }
-      .lang-selector { display: flex; justify-content: center; gap: 15px; margin-top: 40px; }
+      .lang-selector { display: flex; justify-content: center; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
       .lang-btn { padding: 8px 20px; border-radius: 50px; background-color: #f0fff0; border: 2px solid #99cc33; color: #006633; font-weight: bold; cursor: pointer; transition: all 0.3s; }
       .lang-btn.active { background-color: #99cc33; color: white; }
       .lang-btn:hover { transform: scale(1.05); }
-      .share-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
-      .share-btn { background-color: #339966; color: white; padding: 12px 24px; border-radius: 50px; font-weight: bold; transition: all 0.3s; display: flex; align-items: center; gap: 10px; }
-      .share-btn:hover { background-color: #006633; transform: scale(1.05); }
-      .share-btn i { font-size: 1.2rem; }
-      .back-btn { background-color: #99cc33; color: #006633; padding: 12px 24px; border-radius: 50px; font-weight: bold; transition: all 0.3s; display: inline-block; margin-top: 30px; }
-      .back-btn:hover { background-color: #339966; color: white; transform: scale(1.05); }
-      #saveBtn { background-color: #27ae60; color: white; }
-      #whatsappBtn { background-color: #25D366; color: white; }
+      .main-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+      .main-btn { background-color: #339966; color: white; padding: 12px 28px; border-radius: 50px; font-weight: bold; transition: all 0.3s; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+      .main-btn:hover { background-color: #006633; transform: scale(1.05); }
+      .main-btn i { font-size: 1.2rem; }
+      #shareOptions { display: none; margin-top: 20px; flex-wrap: wrap; gap: 15px; justify-content: center; }
+      .share-option { background-color: #339966; color: white; padding: 10px 20px; border-radius: 50px; font-weight: bold; transition: all 0.3s; display: flex; align-items: center; gap: 10px; }
+      .share-option:hover { background-color: #006633; transform: scale(1.05); }
+      .share-option i { font-size: 1.2rem; }
+      #saveBtn { background-color: #27ae60; }
+      #whatsappBtn { background-color: #25D366; }
+      @media (max-width: 768px) {
+        #certificate { padding: 20px; }
+        #certificate h1 { font-size: 2rem; }
+        #certificate .donor-name { font-size: 1.8rem; }
+        #certificate .details { font-size: 1.1rem; }
+        #certificate .message { font-size: 1rem; }
+        #certificate .sig .sig-line { width: 120px; }
+        #certificate .sig p { font-size: 0.9rem; }
+        .lang-selector { gap: 10px; }
+        .main-btn { padding: 10px 20px; }
+        .share-option { padding: 8px 16px; }
+      }
     </style>
 </head>
 <body>
@@ -97,18 +111,21 @@
   <button class="lang-btn" data-lang="sq">SQ</button>
 </div>
 
-<!-- Paylaşım Butonları -->
-<div class="share-buttons">
-  <a href="#" class="share-btn" id="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-  <a href="#" class="share-btn" id="shareInstagram"><i class="fab fa-instagram"></i> Instagram</a>
-  <a href="#" class="share-btn" id="shareTwitter"><i class="fab fa-twitter"></i> Twitter</a>
-  <a href="#" class="share-btn" id="shareLinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-  <a href="#" class="share-btn" id="whatsappBtn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  <button class="share-btn" id="saveBtn"><i class="fas fa-download"></i> Kaydet</button>
+<!-- Ana Butonlar -->
+<div class="main-buttons">
+  <button class="main-btn" id="shareBtn"><i class="fas fa-share-alt"></i> Paylaş</button>
+  <a href="donate.html" class="main-btn"><i class="fas fa-arrow-left"></i> Geri</a>
 </div>
 
-<!-- Geri Dön Butonu -->
-<a href="donate.html" class="back-btn">Geri Dön</a>
+<!-- Paylaş Seçenekleri (Gizli, tıklanınca açılır) -->
+<div id="shareOptions" class="share-buttons">
+  <a href="#" class="share-option" id="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+  <a href="#" class="share-option" id="shareInstagram"><i class="fab fa-instagram"></i> Instagram</a>
+  <a href="#" class="share-option" id="shareTwitter"><i class="fab fa-twitter"></i> Twitter</a>
+  <a href="#" class="share-option" id="shareLinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+  <a href="#" class="share-option" id="whatsappBtn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <button class="share-option" id="saveBtn"><i class="fas fa-download"></i> Kaydet</button>
+</div>
 
 <!-- JavaScript -->
 <script>
@@ -158,6 +175,12 @@ document.addEventListener('DOMContentLoaded', () => {
       link.click();
     });
   });
+});
+
+// Paylaş Butonu - Seçenekleri Göster/Gizle
+document.getElementById('shareBtn').addEventListener('click', () => {
+  const options = document.getElementById('shareOptions');
+  options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
 });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>

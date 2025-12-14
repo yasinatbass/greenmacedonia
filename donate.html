@@ -41,6 +41,13 @@ tailwind.config = {
 #initialThankYou h2 { font-size: 2.5rem; color: #006633; margin-bottom: 20px; }
 #initialThankYou p { margin-bottom: 15px; }
 #customSapling { display: none; }
+@media (max-width: 768px) {
+  .grid-cols-4 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .grid-cols-2 { grid-template-columns: 1fr; }
+  input, select, textarea { font-size: 16px; }
+}
+#mobileMenu { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
+#mobileMenu:not(.hidden) { max-height: 500px; }
 </style>
 </head>
 <body class="font-sans bg-white text-gray-800">
@@ -114,7 +121,7 @@ tailwind.config = {
   </div>
 
   <!-- MOBİL MENÜ -->
-  <div id="mobileMenu" class="lg:hidden bg-white border-t overflow-hidden transition-all duration-500 max-h-0">
+  <div id="mobileMenu" class="lg:hidden bg-white border-t overflow-hidden transition-all duration-500 max-h-0 hidden">
     <div class="px-5 py-6 space-y-4 text-base">
       <a href="index.html" class="block hover:text-primary transition" data-mk="Почетна" data-en="Home" data-sq="Ballina">Почетна</a>
       <a href="projects/index.html" class="block hover:text-primary transition" data-mk="Проекти" data-en="Projects" data-sq="Projekte">Проекти</a>
@@ -141,7 +148,7 @@ tailwind.config = {
 
 <!-- Hero Section -->
 <section class="pt-32 pb-20 relative overflow-hidden">
-  <img src="https://images.unsplash.com/photo-1502086223501-09b7e283f89f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Зелена Македонија" class="absolute inset-0 w-full h-full object-cover opacity-80" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Зелена Македонија" class="absolute inset-0 w-full h-full object-cover opacity-80" loading="lazy">
   <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
   <div class="container mx-auto px-4 relative z-10">
     <div class="max-w-3xl text-white">
@@ -240,16 +247,18 @@ tailwind.config = {
             data-mk="Секој денар оди директно за садење дрвја, заштита на природата и општи активности на фондацијата. 100 денари = 1 fidanka."
             data-en="Every denar goes directly to planting trees, protecting nature and general foundation activities. 100 denars = 1 sapling."
             data-sq="Çdo denar shkon drejtpërdrejt për mbjelljen e pemëve, mbrojtjen e natyrës dhe aktivitetet e përgjithshme të fondacionit. 100 denarë = 1 fidan.">
-          Секој денар оди директно...
+          Секој денар иде директно...
         </p>
       </div>
 
       <div class="p-10">
         <form id="donationForm">
           <div class="grid md:grid-cols-2 gap-6 mb-8">
-            <input type="text" id="fullName" required placeholder="Име и презиме *" class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
+            <input type="text" id="fullName" required placeholder="Име и презиме *"
+                   class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
                    data-mk="Име и презиме *" data-en="Full name *" data-sq="Emri dhe mbiemri *">
-            <input type="email" id="email" required placeholder="Е-пошта *" class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
+            <input type="email" id="email" required placeholder="Е-пошта *"
+                   class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
                    data-mk="Е-пошта *" data-en="Email *" data-sq="Email *">
           </div>
 
@@ -411,7 +420,7 @@ function switchLang(lang) {
   document.querySelectorAll('[data-mk],[data-en],[data-sq]').forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
     if (text !== null) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = text;
       } else {
         el.textContent = text;
@@ -428,17 +437,13 @@ function switchLang(lang) {
     b.classList.toggle('text-gray-600', b.dataset.lang !== lang);
   });
   document.documentElement.lang = lang;
-  localStorage.setItem('preferredLang', lang);  // Dil tercihini sakla
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => switchLang(btn.dataset.lang));
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const preferredLang = localStorage.getItem('preferredLang') || 'mk';
-  switchLang(preferredLang);
-});
+document.addEventListener('DOMContentLoaded', () => switchLang('mk'));
 
 // Donation option seçimi
 document.querySelectorAll('.donation-option').forEach(opt => {
