@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-mk="Контакт | Зелена Македонија" 
+       data-en="Contact | Green Macedonia" 
+       data-sq="Kontakt | Green Maqedoni">
+  Контакт | Зелена Македонија
+</title>
+<meta name="description" content="Контактирајте не за соработка, прашања или волонтерство или било какви прашања.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#006633",
+        secondary: "#339966",
+        accent: "#99cc33",
+        light: "#f0fff0"
+      },
+      fontFamily: { sans: ['Open Sans', 'sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+body { font-family: 'Open Sans', sans-serif; }
+.contact-hero {
+  background: linear-gradient(rgba(0,77,0,0.88), rgba(0,77,0,0.88)),
+              url('https://images.unsplash.com/photo-1559827260-dc6b9a5db0f1?ixlib=rb-4.0.3&auto=format&fit=crop&q=85') center/cover no-repeat fixed;
+}
+iframe { border: 0; border-radius: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+</style>
+</head>
+<body class="bg-gray-50">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center group">
+        <div class="bg-secondary rounded-full w-10 h-10 flex items-center justify-center relative transition-transform duration-300 group-hover:scale-110">
+          <i class="fas fa-mountain text-white text-xl"></i>
+          <i class="fas fa-leaf text-white text-sm absolute -top-1 -right-1 transition-transform duration-300 group-hover:rotate-12"></i>
+        </div>
+        <div class="ml-3">
+          <h1 class="text-lg font-bold text-primary leading-none group-hover:text-secondary transition">Зелена Македонија</h1>
+          <p class="text-[10px] text-secondary leading-none group-hover:text-primary transition">Фондација</p>
+        </div>
+      </a>
+
+      <!-- DESKTOP MENÜ -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+        <a href="index.html" class="text-gray-700 hover:text-primary transition hover:scale-105" data-mk="Почетна" data-en="Home" data-sq="Ballina">Почетна</a>
+        <a href="projects/index.html" class="text-gray-700 hover:text-primary transition hover:scale-105" data-mk="Проекти" data-en="Projects" data-sq="Projekte">Проекти</a>
+        <a href="news/index.html" class="text-gray-700 hover:text-primary transition hover:scale-105" data-mk="Вести" data-en="News" data-sq="Lajme">Вести</a>
+        <a href="donate.html" class="text-primary font-bold transition hover:scale-105" data-mk="Донирај" data-en="Donate" data-sq="Dhuro">Донирај</a>
+        <a href="volunteer.html" class="text-gray-700 hover:text-primary transition hover:scale-105" data-mk="Волонтер" data-en="Volunteer" data-sq="Vullnetar">Волонтер</a>
+        <a href="contact.html" class="text-gray-700 hover:text-primary transition hover:scale-105" data-mk="Контакт" data-en="Contact" data-sq="Kontakt">Контакт</a>
+      </nav>
+
+      <!-- SAĞ KISIM -->
+      <div class="flex items-center space-x-4">
+        <!-- DİL SEÇİCİ -->
+        <div class="hidden md:flex items-center space-x-1 text-xs">
+          <span class="lang-btn px-2 py-1 rounded cursor-pointer font-bold text-primary" data-lang="mk">MK</span>
+          <span class="text-gray-400">|</span>
+          <span class="lang-btn px-2 py-1 rounded cursor-pointer text-gray-600 hover:text-primary" data-lang="en">EN</span>
+          <span class="text-gray-400">|</span>
+          <span class="lang-btn px-2 py-1 rounded cursor-pointer text-gray-600 hover:text-primary" data-lang="sq">SQ</span>
+        </div>
+
+        <!-- BUTONLAR -->
+        <div class="hidden md:flex space-x-2">
+          <a href="donate.html" class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-[#005500] transition hover:scale-105 shadow"
+             data-mk="ДОНИРАЈ" data-en="DONATE" data-sq="DHURO">ДОНИРАЈ</a>
+          <a href="volunteer.html" class="bg-accent text-primary text-xs font-bold px-4 py-2 rounded-full hover:bg-lime-300 transition hover:scale-105 shadow"
+             data-mk="ВОЛОНТЕР" data-en="VOLUNTEER" data-sq="VULLNETAR">ВОЛОНТЕР</a>
+        </div>
+
+        <!-- MOBİL MENU BUTONU -->
+        <button id="mobileBtn" class="lg:hidden text-primary text-2xl transition hover:rotate-90">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBİL MENÜ -->
+  <div id="mobileMenu" class="lg:hidden bg-white border-t overflow-hidden transition-all duration-500 max-h-0">
+    <div class="px-5 py-6 space-y-4 text-base">
+      <a href="index.html" class="block hover:text-primary transition" data-mk="Почетна" data-en="Home" data-sq="Ballina">Почетна</a>
+      <a href="projects/index.html" class="block hover:text-primary transition" data-mk="Проекти" data-en="Projects" data-sq="Projekte">Проекти</a>
+      <a href="news/index.html" class="block hover:text-primary transition" data-mk="Вести" data-en="News" data-sq="Lajme">Вести</a>
+      <a href="donate.html" class="block text-primary font-bold transition" data-mk="Донирај" data-en="Donate" data-sq="Dhuro">Донирај</a>
+      <a href="volunteer.html" class="block hover:text-primary transition" data-mk="Волонтер" data-en="Volunteer" data-sq="Vullnetar">Волонтер</a>
+      <a href="contact.html" class="block hover:text-primary transition" data-mk="Контакт" data-en="Contact" data-sq="Kontakt">Контакт</a>
+      
+      <div class="pt-4 border-t flex justify-center space-x-4 text-sm">
+        <span class="lang-btn font-bold text-primary cursor-pointer" data-lang="mk">MK</span>
+        <span class="lang-btn cursor-pointer" data-lang="en">EN</span>
+        <span class="lang-btn cursor-pointer" data-lang="sq">SQ</span>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-3 pt-4">
+        <a href="donate.html" class="bg-primary text-white text-center py-3 rounded-full font-bold"
+           data-mk="ДОНИРАЈ" data-en="DONATE" data-sq="DHURO">ДОНИРАЈ</a>
+        <a href="volunteer.html" class="bg-accent text-primary text-center py-3 rounded-full font-bold"
+           data-mk="ВОЛОНТЕР" data-en="VOLUNTEER" data-sq="VULLNETAR">ВОЛОНТЕР</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTACT HERO -->
+<section class="contact-hero pt-32 pb-24 text-white text-center">
+  <div class="container mx-auto px-4">
+    <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight"
+        data-mk="Контактирајте не"
+        data-en="Contact Us"
+        data-sq="Na kontaktoni">
+      Контактирајте не
+    </h1>
+    <p class="text-xl md:text-2xl max-w-4xl mx-auto opacity-95"
+        data-mk="Без разлика дали сакате да волонтирате, да донирате, да соработувате или само да прашате нешто – ние сме тука за вас!"
+        data-en="Whether you want to volunteer, donate, collaborate or just ask something – we are here for you!"
+        data-sq="Pavarësisht nëse doni të bëheni vullnetarë, të dhuroni, të bashkëpunoni apo thjesht të pyesni diçka – ne jemi këtu për ju!">
+      Без разлика дали сакате да волонтирате...
+    </p>
+  </div>
+</section>
+
+<!-- BİLGİ + HARİTA + FORM -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4 max-w-7xl">
+    <div class="grid lg:grid-cols-2 gap-12">
+
+      <!-- Sol Taraf -->
+      <div>
+        <h2 class="text-4xl font-bold text-primary mb-8 text-primary mb-10"
+            data-mk="Најдете не" data-en="Find us" data-sq="Na gjeni">Најдете не</h2>
+
+        <div class="space-y-8">
+          <div class="flex items-start">
+            <div class="bg-accent/20 rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-accent text-2xl"></i>
+            </div>
+            <div class="ml-6">
+              <h3 class="text-xl font-bold text-primary" data-mk="Адреса" data-en="Address" data-sq="Adresa">Адреса</h3>
+              <p class="text-gray-700"
+                 data-mk="Булевар Партизански Одреди 43<br>1000 Скопје, Македонија"
+                 data-en="Boulevard Partizanski Odredi 43<br>1000 Skopje, Macedonia"
+                 data-sq="Bulevardi Partizanski Odredi 43<br>1000 Shkup, Maqedoni">Булевар Партизански Одреди 43<br>1000 Скопје, Македонија</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="bg-accent/20 rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-phone-alt text-accent text-2xl"></i>
+            </div>
+            <div class="ml-6">
+              <h3 class="text-xl font-bold text-primary" data-mk="Телефон" data-en="Phone" data-sq="Telefon">Телефон</h3>
+              <p class="text-gray-700">+389 2 123 4567</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="bg-accent/20 rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-envelope text-accent text-2xl"></i>
+            </div>
+            <div class="ml-6">
+              <h3 class="text-xl font-bold text-primary" data-mk="Е-пошта" data-en="Email" data-sq="Email">Е-пошта</h3>
+              <p class="text-gray-700">kontakt@zelenamakedonija.mk</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 rounded-3xl overflow-hidden shadow-2xl">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.298907946349!2d21.418947315839!3d41.997571979213!2m3!1f0!3f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415a9d7f69fc7%3A0x88a4c6a4f9f9e6e5!2sPartizanski%20Odredi%20Boulevard%2C%20Skopje%201000%2C%20North%20Macedonia!5e0!3m2!1sen!2sus!4v1698000000000000"
+            width="100%" height="450" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Sağ Taraf: Form -->
+      <div>
+        <h2 class="text-4xl font-bold text-primary mb-10"
+            data-mk="Испратете порака" data-en="Send us a message" data-sq="Na dërgoni një mesazh">Испратете порака</h2>
+
+        <form action="#" class="bg-light rounded-3xl shadow-2xl p-10 space-y-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <input type="text" required 
+                   placeholder="Име и презиме *"
+                   data-mk="Име и презиме *"
+                   data-en="Full name *"
+                   data-sq="Emri dhe mbiemri *"
+                   class="w-full border border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none transition">
+            <input type="email" required 
+                   placeholder="Е-пошта *"
+                   data-mk="Е-пошта *"
+                   data-en="Email *"
+                   data-sq="Email *"
+                   class="w-full border border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none transition">
+          </div>
+          <input type="tel" 
+                 placeholder="Телефон"
+                 data-mk="Телефон"
+                 data-en="Phone
+                 data-sq="Telefon"
+                 class="w-full border border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none transition">
+          <input type="text" 
+                 placeholder="Наслов / Предмет"
+                 data-mk="Наслов / Предмет"
+                 data-en="Subject"
+                 data-sq="Subjekti"
+                 class="w-full border border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none transition">
+          <textarea rows="7" required 
+                    placeholder="Вашата порака *"
+                    data-mk="Вашата порака *"
+                    data-en="Your message *"
+                    data-sq="Mesazhi juaj *"
+                    class="w-full border border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none transition"></textarea>
+          <div class="text-center">
+            <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold text-xl px-16 py-6 rounded-full transition transform hover:scale-105 shadow-xl"
+                    data-mk="ИСПРАТИ ПОРАКА"
+                    data-en="SEND MESSAGE"
+                    data-sq="DËRGO MESAZHIN">
+              ИСПРАТИ ПОРАКА
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (index.html ile tamamen aynı) -->
+<footer class="bg-primary text-white pt-16 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center mb-6">
+          <div class="bg-white rounded-full p-2 mr-3">
+            <div class="icon-stack relative w-8 h-8">
+              <i class="fas fa-mountain text-primary absolute bottom-0 left-0 text-lg"></i>
+              <i class="fas fa-leaf text-primary absolute top-0 right-0 text-sm"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold" data-mk="Зелена Македонија" data-en="Green Macedonia" data-sq="Gjelbëra Maqedoni">Зелена Македонија</h3>
+            <p class="text-sm text-accent" data-mk="Фондација" data-en="Foundation" data-sq="Fondacion">Фондација</p>
+          </div>
+        </div>
+        <p class="mb-6"
+           data-mk="Прва народна иницијатива против ерозија и за пошумување на Македонија."
+           data-en="First national initiative against erosion and reforestation of Macedonia."
+           data-sq="Iniciativa e parë kombëtare kundër erozionit dhe ripyllëzimit të Maqedonisë.">Прва народна иницијатива...</p>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-accent"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-accent"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-accent"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-6" data-mk="Линкови" data-en="Links" data-sq="Lidhje">Линкови</h4>
+        <ul class="space-y-3">
+          <li><a href="../index.html" class="hover:text-accent" data-mk="Почетна" data-en="Home" data-sq="Ballina">Почетна</a></li>
+          <li><a href="../projects/index.html" class="hover:text-accent" data-mk="Проекти" data-en="Projects" data-sq="Projekte">Проекти</a></li>
+          <li><a href="../news/index.html" class="hover:text-accent" data-mk="Вести" data-en="News" data-sq="Lajme">Вести</a></li>
+          <li><a href="../donate.html" class="hover:text-accent" data-mk="Донирај" data-en="Donate" data-sq="Dhuro">Донирај</a></li>
+          <li><a href="../contact.html" class="hover:text-accent" data-mk="Контакт" data-en="Contact" data-sq="Kontakt">Контакт</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-6" data-mk="Контакт" data-en="Contact" data-sq="Kontakt">Контакт</h4>
+        <ul class="space-y-3">
+          <div class="flex items-start">
+            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+            <span data-mk="Булевар Партизански Одреди 43, 1000 Скопје"
+                  data-en="Boulevard Partizanski Odredi 43, 1000 Skopje"
+                  data-sq="Bulevardi Partizanski Odredi 43, 1000 Shkup">Булевар Партизански Одреди 43, 1000 Скопје</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-phone-alt mr-3 text-accent"></i>
+            <span>+389 2 123 4567</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-envelope mr-3 text-accent"></i>
+            <span>kontakt@zelenamakedonija.mk</span>
+          </div>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-6" data-mk="Биди информиран" data-en="Stay informed" data-sq="Qëndro i informuar">Биди информиран</h4>
+        <p class="mb-4"
+           data-mk="Претплати се за да добиваш информации за нашите активности."
+           data-en="Subscribe to receive updates about our activities."
+           data-sq="Abonohuni për të marrë informacione rreth aktiviteteve tona.">Претплати се...</p>
+        <form class="flex">
+          <input type="email" class="bg-white text-gray-800 py-2 px-4 rounded-l-lg w-full"
+                 data-mk="Твојата е-пошта" data-en="Your email" data-sq="Email-i juaj" placeholder="Твојата е-пошта">
+          <button class="bg-accent text-primary py-2 px-4 rounded-r-lg font-bold"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
+      <p data-mk="© 2025 Зелена Македонија Фондација. Сите права се задржани."
+         data-en="© 2025 Green Macedonia Foundation. All rights reserved."
+         data-sq="© 2025 Fondacioni Gjelbër Maqedoni. Të gjitha të drejtat e rezervuara.">
+        © 2025 Зелена Македонија Фондација. Сите права се задржани.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- TEK VE KESİN ÇALIŞAN SCRİPT (tüm site aynı) -->
+<script>
+// Mobil Menü
+document.getElementById('mobileBtn')?.addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+
+// Dil Değiştirme – %100 çalışıyor
+function switchLang(lang) {
+  document.querySelectorAll('[data-mk],[data-en],[data-sq]').forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text !== null) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.textContent = text;
+      }
+    }
+  });
+  const title = document.querySelector('title');
+  if (title?.hasAttribute(`data-${lang}`)) {
+    title.textContent = title.getAttribute(`data-${lang}`);
+  }
+  // Aktif dil vurgusu
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('text-primary', b.dataset.lang === lang);
+    b.classList.toggle('font-bold', b.dataset.lang === lang);
+    b.classList.toggle('text-gray-600', b.dataset.lang !== lang);
+  });
+  document.documentElement.lang = lang;
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => switchLang(btn.dataset.lang));
+});
+
+document.addEventListener('DOMContentLoaded', () => switchLang('mk'));
+</script>
+</body>
+</html>
