@@ -36,6 +36,11 @@ tailwind.config = {
 .icon-stack { position: relative; display: inline-block; width: 2em; height: 2em; }
 .icon-stack .fa-mountain { position: absolute; left: 0; bottom: 0; font-size: 1.5em; }
 .icon-stack .fa-leaf { position: absolute; right: 0; top: 0; font-size: 1em; }
+#donationForm { max-width: 800px; margin: 0 auto; }
+#initialThankYou { display: none; background-color: #f0fff0; border: 2px solid #99cc33; padding: 40px; border-radius: 20px; text-align: center; font-size: 1.2rem; margin-top: 20px; }
+#initialThankYou h2 { font-size: 2.5rem; color: #006633; margin-bottom: 20px; }
+#initialThankYou p { margin-bottom: 15px; }
+#customSapling { display: none; }
 </style>
 </head>
 <body class="font-sans bg-white text-gray-800">
@@ -220,76 +225,115 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- Donation Form -->
+<!-- Revised Donation Form - Fidan Odaklı -->
 <section id="donate-form" class="py-20 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
       <div class="bg-primary text-white p-10 text-center">
         <h2 class="text-4xl font-bold mb-4"
-            data-mk="Избери колку сакаш да донираш" data-en="Choose how much you want to donate" data-sq="Zgjidh sa dëshiron të dhuroni">Избери колку сакаш да донираш</h2>
+            data-mk="Донирај Фиданки и Поддржи ја Фондацијата"
+            data-en="Donate Saplings and Support the Foundation"
+            data-sq="Dhuro Fidanë dhe Mbështet Fondacionin">
+          Донирај Фиданки и Поддржи ја Фондацијата
+        </h2>
         <p class="text-xl opacity-90"
-            data-mk="Секој денар оди директно за садење дрвја и заштита на природата"
-            data-en="Every denar goes directly to planting trees and protecting nature"
-            data-sq="Çdo denar shkon drejtpërdrejt për mbjelljen e pemëve dhe mbrojtjen e natyrës">Секој денар оди директно...</p>
+            data-mk="Секој денар оди директно за садење дрвја, заштита на природата и општи активности на фондацијата. 100 денари = 1 fidanka."
+            data-en="Every denar goes directly to planting trees, protecting nature and general foundation activities. 100 denars = 1 sapling."
+            data-sq="Çdo denar shkon drejtpërdrejt për mbjelljen e pemëve, mbrojtjen e natyrës dhe aktivitetet e përgjithshme të fondacionit. 100 denarë = 1 fidan.">
+          Секој денар оди директно...
+        </p>
       </div>
 
       <div class="p-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-          <div class="donation-option text-center p-6 border-2 border-gray-300 rounded-2xl hover:border-primary transition" data-amount="500">
-            <div class="text-3xl font-bold text-primary">5</div>
-            <div class="text-5xl font-bold text-primary">дрвја</div>
-            <div class="text-gray-600">500 ден</div>
+        <form id="donationForm">
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <input type="text" id="fullName" required placeholder="Име и презиме *" class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
+                   data-mk="Име и презиме *" data-en="Full name *" data-sq="Emri dhe mbiemri *">
+            <input type="email" id="email" required placeholder="Е-пошта *" class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
+                   data-mk="Е-пошта *" data-en="Email *" data-sq="Email *">
           </div>
-          <div class="donation-option text-center p-6 border-2 border-gray-300 rounded-2xl hover:border-primary transition" data-amount="1000">
-            <div class="text-3xl font-bold text-primary">10</div>
-            <div class="text-5xl font-bold text-primary">дрвја</div>
-            <div class="text-gray-600">1.000 ден</div>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <input type="text" id="forWhom" placeholder="За кого донирате? (опционално - име на лице или повод)"
+                   class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
+                   data-mk="За кого донирате? (опционално - име на лице или повод)"
+                   data-en="For whom are you donating? (optional - name or occasion)"
+                   data-sq="Për kë po dhuroni? (opsionale - emri ose rasti)">
+            <select id="saplingCount" required class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none">
+              <option value="" disabled selected data-mk="Колку fidanki сакате да донирате? *" data-en="How many saplings do you want to donate? *" data-sq="Sa fidanë dëshironi të dhuroni? *">Колку fidanki сакате да донирате? *</option>
+              <option value="1">1 fidanka (100 ден)</option>
+              <option value="5">5 fidanki (500 ден)</option>
+              <option value="10">10 fidanki (1.000 ден)</option>
+              <option value="30">30 fidanki (3.000 ден)</option>
+              <option value="50">50 fidanki (5.000 ден)</option>
+              <option value="custom">Сопствен број</option>
+            </select>
           </div>
-          <div class="donation-option text-center p-6 border-2 border-gray-300 rounded-2xl hover:border-primary transition active" data-amount="3000">
-            <div class="text-3xl font-bold text-primary">30</div>
-            <div class="text-5xl font-bold text-primary">дрвја</div>
-            <div class="text-gray-600">3.000 ден</div>
+
+          <div id="customSapling" class="mb-8">
+            <input type="number" id="customSaplingCount" min="1" placeholder="Внесете број на fidanki"
+                   class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none w-full"
+                   data-mk="Внесете број на fidanki"
+                   data-en="Enter number of saplings"
+                   data-sq="Shkruaj numrin e fidanëve">
           </div>
-          <div class="donation-option text-center p-6 border-2 border-gray-300 rounded-2xl hover:border-primary transition" data-amount="5000">
-            <div class="text-3xl font-bold text-primary">50</div>
-            <div class="text-5xl font-bold text-primary">дрвја</div>
-            <div class="text-gray-600">5.000 ден</div>
+
+          <div class="mb-8">
+            <textarea id="message" placeholder="Посебна порака за fidan bağışı (опционално - ќе се користи во сертификатот)"
+                      class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none w-full h-32"
+                      data-mk="Посебна порака за fidan bağışı (опционално - ќе се користи во сертификатот)"
+                      data-en="Special message for the sapling donation (optional - will be used in the certificate)"
+                      data-sq="Mesazh special për dhurimin e fidanëve (opsionale - do të përdoret në certifikatë)"></textarea>
           </div>
-        </div>
 
-        <div class="text-center mb-8">
-          <input type="number" id="customAmount" placeholder="Или внеси свој износ (ден)" class="border-2 border-gray-300 rounded-xl px-6 py-4 text-xl text-center w-80 focus:border-primary focus:outline-none"
-                 data-mk="Или внеси свој износ (ден)" data-en="Or enter your own amount (denars)" data-sq="Ose shkruaj shumën tënde (denarë)">
-        </div>
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-primary mb-4"
+                data-mk="Податоци за платежна карта"
+                data-en="Payment Card Details"
+                data-sq="Të dhënat e kartës së pagesës">Податоци за платежна карта</h3>
+            <input type="text" id="cardNumber" placeholder="Број на карта (16 цифри)"
+                   class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none w-full mb-4"
+                   data-mk="Број на карта (16 цифри)"
+                   data-en="Card number (16 digits)"
+                   data-sq="Numri i kartës (16 shifra)">
+            <div class="grid grid-cols-2 gap-6">
+              <input type="text" id="expiryDate" placeholder="Датум на истекување (MM/YY)"
+                     class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
+                     data-mk="Датум на истекување (MM/YY)"
+                     data-en="Expiry date (MM/YY)"
+                     data-sq="Data e skadimit (MM/YY)">
+              <input type="text" id="cvv" placeholder="CVV (3-4 цифри)"
+                     class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
+                     data-mk="CVV (3-4 цифри)"
+                     data-en="CVV (3-4 digits)"
+                     data-sq="CVV (3-4 shifra)">
+            </div>
+          </div>
 
-        <div class="grid md:grid-cols-2 gap-8 mb-10">
-          <input type="text" required placeholder="Име и презиме *" class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
-                 data-mk="Име и презиме *" data-en="Full name *" data-sq="Emri dhe mbiemri *">
-          <input type="email" required placeholder="Е-пошта *" class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
-                 data-mk="Е-пошта *" data-en="Email *" data-sq="Email *">
-          <input type="tel" placeholder="Телефон" class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
-                 data-mk="Телефон" data-en="Phone" data-sq="Telefon">
-          <input type="text" placeholder="Порака (по желба)" class="border-2 border-gray-300 rounded-xl px-6 py-4 focus:border-primary focus:outline-none"
-                 data-mk="Порака (по желба)" data-en="Message (optional)" data-sq="Mesazh (opsional)">
-        </div>
+          <div class="text-center">
+            <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold text-2xl px-20 py-6 rounded-full transition transform hover:scale-105 shadow-xl"
+                    data-mk="ПОТВРДИ ДОНАЦИЈА" data-en="CONFIRM DONATION" data-sq="KONFIRM DITURIMIN">ПОТВРДИ ДОНАЦИЈА</button>
+          </div>
+        </form>
 
-        <div class="text-center">
-          <button class="bg-primary hover:bg-secondary text-white font-bold text-2xl px-20 py-6 rounded-full transition transform hover:scale-105 shadow-xl"
-                  data-mk="ДОНИРАЈ СЕГА" data-en="DONATE NOW" data-sq="DHURO TANI">ДОНИРАЈ СЕГА</button>
+        <!-- Initial Thank You Message -->
+        <div id="initialThankYou" class="mt-8">
+          <h2 id="thankYouTitle"></h2>
+          <p id="thankYouText"></p>
+          <p data-mk="Ќе добиете е-пошта со детали за вашата донација. Ви благодариме што ја поддржувате нашата фондација!"
+             data-en="You will receive an email with details of your donation. Thank you for supporting our foundation!"
+             data-sq="Do të merrni një email me detaje të dhurimit tuaj. Faleminderit që mbështetni fondacionin tonë!">
+            Ќе добиете е-пошта со детали за вашата донација. Ви благодариме што ја поддржувате нашата фондација!
+          </p>
+          <button onclick="window.location.href='thanks.html'" class="bg-accent text-primary font-bold py-3 px-10 rounded-full hover:bg-white transition mt-6"
+                  data-mk="ПРОДОЛЖИ НА СЕРТИФИКАТОТ" data-en="PROCEED TO CERTIFICATE" data-sq="VAZHDONI TE CERTIFIKATA">ПРОДОЛЖИ НА СЕРТИФИКАТОТ</button>
         </div>
-
-        <p class="text-center text-sm text-gray-500 mt-8"
-           data-mk="Со донирање се согласувате со нашите Услови за користење и Политика за приватност."
-           data-en="By donating you agree to our Terms of Use and Privacy Policy."
-           data-sq="Duke dhuruar ju pranoni Kushtet tona të Përdorimit dhe Politikën e Privatësisë.">
-          Со донирање се согласувате...
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Footer (tamamen aynı) -->
+<!-- Footer -->
 <footer class="bg-primary text-white pt-16 pb-8">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -357,7 +401,7 @@ tailwind.config = {
   </div>
 </footer>
 
-<!-- TEK VE KESİN ÇALIŞAN JAVASCRIPT -->
+<!-- JavaScript -->
 <script>
 document.getElementById('mobileBtn')?.addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('hidden');
@@ -367,7 +411,7 @@ function switchLang(lang) {
   document.querySelectorAll('[data-mk],[data-en],[data-sq]').forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
     if (text !== null) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
         el.placeholder = text;
       } else {
         el.textContent = text;
@@ -384,13 +428,17 @@ function switchLang(lang) {
     b.classList.toggle('text-gray-600', b.dataset.lang !== lang);
   });
   document.documentElement.lang = lang;
+  localStorage.setItem('preferredLang', lang);  // Dil tercihini sakla
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => switchLang(btn.dataset.lang));
 });
 
-document.addEventListener('DOMContentLoaded', () => switchLang('mk'));
+document.addEventListener('DOMContentLoaded', () => {
+  const preferredLang = localStorage.getItem('preferredLang') || 'mk';
+  switchLang(preferredLang);
+});
 
 // Donation option seçimi
 document.querySelectorAll('.donation-option').forEach(opt => {
@@ -409,6 +457,41 @@ if (localStorage.getItem('cookiesAccepted')) {
 document.getElementById('acceptCookies')?.addEventListener('click', () => {
   localStorage.setItem('cookiesAccepted', 'true');
   document.getElementById('cookieBanner').style.display = 'none';
+});
+
+// Form Submit and Redirect to thanks.html
+document.getElementById('donationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const fullName = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const forWhom = document.getElementById('forWhom').value.trim();
+  let saplingCount = document.getElementById('saplingCount').value;
+  if (saplingCount === 'custom') {
+    saplingCount = document.getElementById('customSaplingCount').value.trim();
+  }
+  const message = document.getElementById('message').value.trim();
+  const cardNumber = document.getElementById('cardNumber').value.trim();
+  const expiryDate = document.getElementById('expiryDate').value.trim();
+  const cvv = document.getElementById('cvv').value.trim();
+
+  if (fullName && email && saplingCount && cardNumber && expiryDate && cvv) {
+    localStorage.setItem('donationData', JSON.stringify({
+      fullName, forWhom, saplingCount, message, lang: document.documentElement.lang
+    }));
+    document.getElementById('donationForm').style.display = 'none';
+    const thankYou = document.getElementById('initialThankYou');
+    thankYou.style.display = 'block';
+    document.getElementById('thankYouTitle').innerText = `Благодариме, ${fullName}!`;
+    document.getElementById('thankYouText').innerText = `Вашата донација од ${saplingCount} fidanki е прифатена. Кликнете долу за да го видите вашиот сертификат.`;
+  } else {
+    alert('Молиме пополнете ги сите задолжителни полиња.');
+  }
+});
+
+// Custom Sapling Show
+document.getElementById('saplingCount').addEventListener('change', function() {
+  const customDiv = document.getElementById('customSapling');
+  customDiv.style.display = this.value === 'custom' ? 'block' : 'none';
 });
 </script>
 </body>
