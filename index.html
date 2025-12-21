@@ -123,10 +123,16 @@
             #expiryDate { font-size: 1rem; }
             #cvv { font-size: 1rem; }
             .payment-icons i { font-size: 1.8rem; }
-            header .flex { flex-wrap: wrap; justify-content: space-between; padding: 0 0.5rem; }
-            header .hidden { display: none; }
-            header .lg\:flex { display: none; }
-            header .lg\:hidden { display: block; }
+            header .flex { flex-wrap: nowrap; }
+            header .flex > * { flex: 1 1 auto; }
+            header .flex > div:last-child { flex: 0 0 auto; }
+            header .flex > div:first-child { flex: 0 0 auto; }
+            header .flex > div:first-child .ml-3 { margin-left: 0.5rem !important; }
+            header .flex > div:first-child h1 { font-size: 1.25rem !important; }
+            header .flex > div:first-child p { font-size: 0.75rem !important; }
+            header .flex > div:first-child .w-12 { width: 2.5rem !important; height: 2.5rem !important; }
+            header .flex > div:first-child .text-2xl { font-size: 1.5rem !important; }
+            header .flex > div:first-child .text-lg { font-size: 1rem !important; }
             .lang-btn { padding: 0.5rem 1rem; font-size: 0.875rem; }
             /* Mobil ödeme formu düzeltmeleri */
             .grid-cols-2 { grid-template-columns: 1fr; }
@@ -136,11 +142,6 @@
             .payment-icons { gap: 0.5rem; }
             .payment-icons i { font-size: 1.5rem; }
             button[type="submit"] { padding: 1rem; font-size: 1.1rem; }
-            /* Header mobil düzeltmesi */
-            header .flex { flex-wrap: nowrap; }
-            header .flex > * { flex: 1 1 auto; }
-            header .flex > div:last-child { flex: 0 0 auto; }
-            header .flex > div:first-child { flex: 0 0 auto; }
         }
         @media (min-width: 769px) {
             .slider { height: 600px; }
@@ -173,7 +174,7 @@
             data-mk="Прифати" data-en="Accept" data-sq="Prano">Прифати</button>
 </div>
 
-<!-- HEADER with Sticky Navigation and Search Bar -->
+<!-- HEADER with Sticky Navigation (Search butonu kaldırıldı) -->
 <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -197,7 +198,7 @@
                 <a href="#contact" class="text-gray-700 hover:text-primary transition hover:scale-105" data-mk="Контакт" data-en="Contact" data-sq="Kontakt">Контакт</a>
             </nav>
 
-            <!-- RIGHT SECTION: Language Selector, Buttons, Search -->
+            <!-- RIGHT SECTION: Language Selector, Buttons (Search butonu kaldırıldı) -->
             <div class="flex items-center space-x-4">
                 <!-- LANGUAGE SELECTOR -->
                 <div class="hidden md:flex items-center space-x-1 text-xs">
@@ -213,11 +214,6 @@
                     <a href="#donate" class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-dark transition hover:scale-105 shadow-md" 
                        data-mk="ДОНИРАЈ" data-en="DONATE" data-sq="DHURO">ДОНИРАЈ</a>
                 </div>
-
-                <!-- SEARCH ICON -->
-                <button id="searchBtn" class="text-primary text-xl hover:text-secondary transition">
-                    <i class="fas fa-search"></i>
-                </button>
 
                 <!-- MOBILE MENU BUTTON -->
                 <button id="mobileBtn" class="lg:hidden text-primary text-2xl transition hover:rotate-90">
@@ -246,11 +242,6 @@
                    data-mk="ДОНИРАЈ" data-en="DONATE" data-sq="DHURO">ДОНИРАЈ</a>
                 </div>
         </div>
-    </div>
-
-    <!-- SEARCH BAR (Hidden by Default) -->
-    <div id="searchBar" class="hidden bg-light py-4 px-4">
-        <input type="text" placeholder="Пребарај..." class="w-full border-2 border-secondary rounded-full p-3 focus:border-accent" data-mk="Пребарај..." data-en="Search..." data-sq="Kërko...">
     </div>
 </header>
 
@@ -525,12 +516,6 @@
     const mobileMenu = document.getElementById('mobileMenu');
     mobileBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('open');
-    });
-
-    // Search Bar Toggle
-    document.getElementById('searchBtn').addEventListener('click', () => {
-        const searchBar = document.getElementById('searchBar');
-        searchBar.classList.toggle('hidden');
     });
 
     // Slider with Auto Play and Pause on Hover
