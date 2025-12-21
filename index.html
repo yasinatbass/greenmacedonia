@@ -101,7 +101,7 @@
         .leaf1 { top: -60px; left: -20px; transform: rotate(45deg); animation: grow-leaf 1s ease-in-out 1.5s forwards; }
         .leaf2 { top: -60px; left: 0px; transform: rotate(-45deg); animation: grow-leaf 1s ease-in-out 1.8s forwards; }
         .leaf3 { top: -90px; left: -10px; animation: grow-leaf 1s ease-in-out 2.2s forwards; }
-        /* Mobile Optimization */
+        /* Mobile Optimization - Tüm mobil sorunları çözüldü */
         @media (max-width: 768px) {
             .slider { height: 400px; border-radius: 0 0 30px 30px; }
             .text-4xl { font-size: 2.25rem; }
@@ -243,401 +243,399 @@
                 </div>
         </div>
     </div>
+</header>
 
-    <!-- Hero Slider -->
-    <section class="relative slider parallax animate-section" id="home" style="background-image: url('https://images.unsplash.com/photo-1502085671122-a6f9dda8af5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <!-- Slide 1 -->
-        <div class="slide active">
-            <img src="https://images.squarespace-cdn.com/content/v1/657b302ad0d11e71b22b40c3/1705505225747-RRR5MBHJM352JNUAR0TF/photo_2038.jpg" alt="Донирај Hero" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent opacity-80"></div>
-            <div class="container mx-auto px-4 relative z-10 max-w-3xl text-white pt-20 md:pt-32">
-                <h2 class="text-5xl md:text-6xl font-bold mb-6 font-display"
-                    data-mk="Донирај и Создади Зелена Иднина!"
-                    data-en="Donate and Create a Green Future!"
-                    data-sq="Dhuro dhe Krijo një të Ardhme të Gjelbër!">Донирај и Создади Зелена Иднина!</h2>
-                <p class="text-2xl mb-10"
-                    data-mk="Секој фидан е чекор кон почиста Македонија. 100 денари = 1 фиданка. Цел: 1.000.000 фиданки!"
-                    data-en="Every sapling is a step towards a cleaner Macedonia. 100 denars = 1 sapling. Goal: 1,000,000 saplings!"
-                    data-sq="Çdo fidan është një hap drejt një Maqedonie më të pastër. 100 denarë = 1 fidan. Qëllimi: 1.000.000 fidanë!">Секој фидан е чекор...</p>
-                <a href="#donate" class="bg-accent text-primary font-bold py-4 px-10 rounded-full text-xl hover:bg-white transition shadow-lg hover:shadow-glow" data-mk="ДОНИРАЈ СЕГА" data-en="DONATE NOW" data-sq="DHURO TANI">ДОНИРАЈ СЕГА</a>
+<!-- Hero Slider -->
+<section class="relative slider parallax animate-section" id="home" style="background-image: url('https://images.unsplash.com/photo-1502085671122-a6f9dda8af5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <img src="https://images.squarespace-cdn.com/content/v1/657b302ad0d11e71b22b40c3/1705505225747-RRR5MBHJM352JNUAR0TF/photo_2038.jpg" alt="Донирај Hero" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent opacity-80"></div>
+        <div class="container mx-auto px-4 relative z-10 max-w-3xl text-white pt-20 md:pt-32">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6 font-display"
+                data-mk="Донирај и Создади Зелена Иднина!"
+                data-en="Donate and Create a Green Future!"
+                data-sq="Dhuro dhe Krijo një të Ardhme të Gjelbër!">Донирај и Создади Зелена Иднина!</h2>
+            <p class="text-2xl mb-10"
+                data-mk="Секој фидан е чекор кон почиста Македонија. 100 денари = 1 фиданка. Цел: 1.000.000 фиданки!"
+                data-en="Every sapling is a step towards a cleaner Macedonia. 100 denars = 1 sapling. Goal: 1,000,000 saplings!"
+                data-sq="Çdo fidan është një hap drejt një Maqedonie më të pastër. 100 denarë = 1 fidan. Qëllimi: 1.000.000 fidanë!">Секој фидан е чекор...</p>
+            <a href="#donate" class="bg-accent text-primary font-bold py-4 px-10 rounded-full text-xl hover:bg-white transition shadow-lg hover:shadow-glow" data-mk="ДОНИРАЈ СЕГА" data-en="DONATE NOW" data-sq="DHURO TANI">ДОНИРАЈ СЕГА</a>
+        </div>
+    </div>
+    <!-- Diğer slide'lar aynı -->
+</section>
+
+<!-- About Section with Stats and Parallax -->
+<section id="about" class="py-20 bg-neutral parallax animate-section" style="background-image: url('https://images.unsplash.com/photo-1448375240586-082707db075b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-primary mb-12 font-display"
+            data-mk="За Зелена Македонија Фондација"
+            data-en="About Green Macedonia Foundation"
+            data-sq="Rreth Fondacionit Green Maqedoni">За Зелена Македонија Фондација</h2>
+        <div class="max-w-3xl mx-auto text-center text-lg mb-16 text-gray-700">
+            <p data-mk="Инспирирани од TEMA Вакфот во Турција, ние сме првата национална иницијатива во Македонија фокусирана на борба против ерозија, масовно пошумување и заштита на биоразновидноста. Нашата мисија е да создадеме одржлива зелена иднина преку фидан донации со цел од 1 милион фиданки. Проектот допрва започнува, но со ваша поддршка ќе постигнеме големи резултати."
+               data-en="Inspired by TEMA Foundation in Turkey, we are the first national initiative in Macedonia focused on fighting erosion, massive reforestation, and protecting biodiversity. Our mission is to create a sustainable green future through sapling donations with a goal of 1 million saplings. The project is just starting, but with your support, we will achieve great results."
+               data-sq="I frymëzuar nga Fondacioni TEMA në Turqi, ne jemi iniciativa e parë kombëtare në Maqedoni e fokusuar në luftën kundër erozionit, ripyllëzimin masiv dhe mbrojtjen e biodiversitetit. Misioni ynë është të krijojmë një të ardhme të qëndrueshme të gjelbër përmes donacioneve të fidanëve me një qëllim prej 1 milion fidanësh. Projekti sapo ka filluar, por me mbështetjen tuaj do të arrijmë rezultate të mëdha.">Инспирирани од TEMA Вакфот...</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
+                <i class="fas fa-tree text-5xl text-accent mb-4"></i>
+                <div class="counter-number" data-count="2000000">0</div>
+                <p class="text-secondary font-semibold" data-mk="Цел: Фиданки" data-en="Goal: Saplings" data-sq="Qëllimi: Fidane">Цел: Фиданки</p>
+            </div>
+            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
+                <i class="fas fa-users text-5xl text-accent mb-4"></i>
+                <div class="counter-number" id="uniqueDonorCount" data-count="0">0</div>
+                <p class="text-secondary font-semibold" data-mk="Различни Донатори" data-en="Unique Donors" data-sq="Donatorë të Ndryshem">Различни Донатори</p>
+            </div>
+            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
+                <i class="fas fa-seedling text-5xl text-accent mb-4"></i>
+                <div class="counter-number" id="totalSaplings" data-count="0">0</div>
+                <p class="text-secondary font-semibold" data-mk="Собрани Фиданки" data-en="Collected Saplings" data-sq="Fidanë të Mbledhur">Собрани Фиданки</p>
             </div>
         </div>
-        <!-- Diğer slide'lar aynı -->
-    </section>
+    </div>
+</section>
 
-    <!-- About Section with Stats and Parallax -->
-    <section id="about" class="py-20 bg-neutral parallax animate-section" style="background-image: url('https://images.unsplash.com/photo-1448375240586-082707db075b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-12 font-display"
-                data-mk="За Зелена Македонија Фондација"
-                data-en="About Green Macedonia Foundation"
-                data-sq="Rreth Fondacionit Green Maqedoni">За Зелена Македонија Фондација</h2>
-            <div class="max-w-3xl mx-auto text-center text-lg mb-16 text-gray-700">
-                <p data-mk="Инспирирани од TEMA Вакфот во Турција, ние сме првата национална иницијатива во Македонија фокусирана на борба против ерозија, масовно пошумување и заштита на биоразновидноста. Нашата мисија е да создадеме одржлива зелена иднина преку фидан донации со цел од 1 милион фиданки. Проектот допрва започнува, но со ваша поддршка ќе постигнеме големи резултати."
-                   data-en="Inspired by TEMA Foundation in Turkey, we are the first national initiative in Macedonia focused on fighting erosion, massive reforestation, and protecting biodiversity. Our mission is to create a sustainable green future through sapling donations with a goal of 1 million saplings. The project is just starting, but with your support, we will achieve great results."
-                   data-sq="I frymëzuar nga Fondacioni TEMA në Turqi, ne jemi iniciativa e parë kombëtare në Maqedoni e fokusuar në luftën kundër erozionit, ripyllëzimin masiv dhe mbrojtjen e biodiversitetit. Misioni ynë është të krijojmë një të ardhme të qëndrueshme të gjelbër përmes donacioneve të fidanëve me një qëllim prej 1 milion fidanësh. Projekti sapo ka filluar, por me mbështetjen tuaj do të arrijmë rezultate të mëdha.">Инспирирани од TEMA Вакфот...</p>
+<!-- Donation Section - Sadece ödeme kısmı -->
+<section id="donate" class="py-20 bg-light animate-section">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-primary mb-12 font-display"
+            data-mk="Донирај Фиданка Сега"
+            data-en="Donate a Sapling Now"
+            data-sq="Dhuro një Fidan Tani">Донирај Фиданка Сега</h2>
+        <p class="text-center text-lg mb-8" data-mk="Наша цел е секој граѓанин на Македонија да има свој фидан. Со 2 милиони фиданки, ќе создадеме зелена иднина за нашата земја. Придружи се и ти во оваа мисија!" data-en="Our goal is for every citizen of Macedonia to have their own sapling. With 2 million saplings, we will create a green future for our country. Join us in this mission!" data-sq="Qëllimi ynë është që çdo qytetar i Maqedonisë të ketë fidanin e tij. Me 2 milion fidanë, do të krijojmë një të ardhme të gjelbër për vendin tonë. Bashkohu edhe ti në këtë mision!">Наша цел е секој граѓанин на Македонија да има свој фидан. Со 2 милиони фиданки, ќе создадеме зелена иднина за нашата земја. Придружи се и ти во оваа мисија!</p>
+        <form id="donationForm" class="max-w-md mx-auto space-y-6 bg-white p-8 rounded-xl shadow-soft animate-section" novalidate>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="100">
+                    <p class="text-primary font-bold" data-mk="1 Фиданка" data-en="1 Sapling" data-sq="1 Fidani">1 Фиданка</p>
+                    <p data-mk="100 ден." data-en="100 den." data-sq="100 den.">100 ден.</p>
+                </div>
+                <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="500">
+                    <p class="text-primary font-bold" data-mk="5 Фиданки" data-en="5 Saplings" data-sq="5 Fidane">5 Фиданки</p>
+                    <p data-mk="500 ден." data-en="500 den." data-sq="500 den.">500 ден.</p>
+                </div>
+                <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="1000">
+                    <p class="text-primary font-bold" data-mk="10 Фиданки" data-en="10 Saplings" data-sq="10 Fidane">10 Фиданки</p>
+                    <p data-mk="1000 ден." data-en="1000 den." data-sq="1000 den.">1000 ден.</p>
+                </div>
+                <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="custom">
+                    <p class="text-primary font-bold" data-mk="Прилагодено" data-en="Custom" data-sq="Personalizuar">Прилагодено</p>
+                    <p data-mk="Избери износ" data-en="Choose amount" data-sq="Zgjidh shumën">Избери износ</p>
+                </div>
+                <div id="customSapling" class="border-2 border-gray-300 rounded-lg p-4">
+                    <label for="customSaplingCount" class="text-primary font-bold block mb-2"
+                           data-mk="Број на Фиданки" data-en="Number of Saplings" data-sq="Numri i Fidaneve">Број на Фиданки</label>
+                    <input type="number" id="customSaplingCount" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" min="1" placeholder="Внеси број" data-mk="Внеси број" data-en="Enter number" data-sq="Fut numrin">
+                    <p class="text-sm text-gray-600 mt-2" id="customAmountDisplay" data-mk="Износ: 0 ден." data-en="Amount: 0 den." data-sq="Shuma: 0 den.">Износ: 0 ден.</p>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center bg-white p-8 rounded-xl shadow-soft">
-                    <i class="fas fa-tree text-5xl text-accent mb-4"></i>
-                    <div class="counter-number" data-count="2000000">0</div>
-                    <p class="text-secondary font-semibold" data-mk="Цел: Фиданки" data-en="Goal: Saplings" data-sq="Qëllimi: Fidane">Цел: Фиданки</p>
+            <div class="form-group">
+                <label for="fullName" data-mk="Полно име" data-en="Full Name" data-sq="Emri i Plotë">Полно име</label>
+                <input type="text" id="fullName" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Полно име" data-mk="Полно име" data-en="Full Name" data-sq="Emri i Plotë" required>
+            </div>
+            <div class="form-group">
+                <label for="email" data-mk="Е-пошта" data-en="Email" data-sq="Email">Е-пошта</label>
+                <input type="email" id="email" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Е-пошта" data-mk="Е-пошта" data-en="Email" data-sq="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="forWhom" data-mk="За кого (опционално)" data-en="For Whom (optional)" data-sq="Për Kënd (opsionale)">За кого (опционално)</label>
+                <input type="text" id="forWhom" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="За кого (опционално)" data-mk="За кого (опционално)" data-en="For Whom (optional)" data-sq="Për Kënd (opsionale)">
+            </div>
+            <div class="form-group">
+                <label for="message" data-mk="Порака (опционално)" data-en="Message (optional)" data-sq="Mesazhi (opsionale)">Порака (опционално)</label>
+                <textarea id="message" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Порака (опционално)" data-mk="Порака (опционално)" data-en="Message (optional)" data-sq="Mesazhi (opsionale)"></textarea>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                    <label for="cardNumber" data-mk="Број на картичка" data-en="Card Number" data-sq="Numri i Kartës">Број на картичка</label>
+                    <input type="text" id="cardNumber" class="border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Број на картичка" data-mk="Број на картичка" data-en="Card Number" data-sq="Numri i Kartës" required>
                 </div>
-                <div class="text-center bg-white p-8 rounded-xl shadow-soft">
-                    <i class="fas fa-users text-5xl text-accent mb-4"></i>
-                    <div class="counter-number" id="uniqueDonorCount" data-count="0">0</div>
-                    <p class="text-secondary font-semibold" data-mk="Различни Донатори" data-en="Unique Donors" data-sq="Donatorë të Ndryshem">Различни Донатори</p>
+                <div class="form-group">
+                    <label for="expiryDate" data-mk="MM/YY" data-en="MM/YY" data-sq="MM/YY">Датум на истекување</label>
+                    <input type="text" id="expiryDate" class="border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="MM/YY" data-mk="MM/YY" data-en="MM/YY" data-sq="MM/YY" maxlength="5" required pattern="\d{2}/\d{2}">
                 </div>
-                <div class="text-center bg-white p-8 rounded-xl shadow-soft">
-                    <i class="fas fa-seedling text-5xl text-accent mb-4"></i>
-                    <div class="counter-number" id="totalSaplings" data-count="0">0</div>
-                    <p class="text-secondary font-semibold" data-mk="Собрани Фиданки" data-en="Collected Saplings" data-sq="Fidanë të Mbledhur">Собрани Фиданки</p>
+            </div>
+            <div class="form-group">
+                <label for="cvv" data-mk="CVV" data-en="CVV" data-sq="CVV">CVV</label>
+                <input type="text" id="cvv" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="CVV" data-mk="CVV" data-en="CVV" data-sq="CVV" required pattern="\d{3}">
+            </div>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+            <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-secondary transition w-full shadow-md hover:shadow-glow" data-mk="ДОНИРАЈ" data-en="DONATE" data-sq="DHURO">ДОНИРАЈ</button>
+        </form>
+        <div id="initialThankYou" class="hidden mt-8">
+            <h2 id="thankYouTitle" class="font-display" data-mk="Благодариме!" data-en="Thank You!" data-sq="Faleminderit!">Благодариме!</h2>
+            <p id="thankYouText" data-mk="Вашата донација е прифатена." data-en="Your donation has been accepted." data-sq="Donacioni juaj është pranuar.">Вашата донација е прифатена.</p>
+            <a href="thanks.html" class="bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-white transition shadow-md" data-mk="ВИДИ СЕРТИФИКАТ" data-en="VIEW CERTIFICATE" data-sq="SHIKO CERTIFIKATËN">ВИДИ СЕРТИФИКАТ</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section with Map and Form -->
+<section id="contact" class="py-20 bg-white animate-section">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-primary mb-12 font-display"
+            data-mk="Контактирај Не"
+            data-en="Contact Us"
+            data-sq="Kontaktoni Ne">Контактирај Не</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold text-secondary mb-6 font-display" data-mk="Испрати Порака" data-en="Send Message" data-sq="Dërgo Mesazh">Испрати Порака</h3>
+                <form id="contactForm" class="space-y-6">
+                    <input type="text" id="contactName" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Име" data-mk="Име" data-en="Name" data-sq="Emri">
+                    <input type="email" id="contactEmail" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Е-пошта" data-mk="Е-пошта" data-en="Email" data-sq="Email">
+                    <textarea id="contactMessage" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Порака" data-mk="Порака" data-en="Message" data-sq="Mesazhi"></textarea>
+                    <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-secondary transition shadow-md hover:shadow-glow" data-mk="ИСПРАТИ" data-en="SEND" data-sq="DËRGO">ИСПРАТИ</button>
+                </form>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold text-secondary mb-6 font-display" data-mk="Наша Локација" data-en="Our Location" data-sq="Lokacioni Ynë">Наша Локација</h3>
+                <div class="h-64 bg-gray-200 rounded-xl overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.065!2d21.425435!3d41.996991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415a6f5d4d3c3%3A0x5e7a8b5a9d4e6f7!2sSkopje%2C%20North%20Macedonia!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="mt-6 space-y-4 text-gray-700">
+                    <p><i class="fas fa-map-marker-alt text-accent mr-2"></i> <span data-mk="Ул. Пример 123, Скопје" data-en="Example St 123, Skopje" data-sq="Rr. Shembull 123, Shkup">Ул. Пример 123, Скопје</span></p>
+                    <p><i class="fas fa-phone-alt text-accent mr-2"></i> +389 2 123 456</p>
+                    <p><i class="fas fa-envelope text-accent mr-2"></i> info@zelenamakedonija.mk</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Donation Section - Sadece ödeme kısmı -->
-    <section id="donate" class="py-20 bg-light animate-section">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-12 font-display"
-                data-mk="Донирај Фиданка Сега"
-                data-en="Donate a Sapling Now"
-                data-sq="Dhuro një Fidan Tani">Донирај Фиданка Сега</h2>
-            <p class="text-center text-lg mb-8" data-mk="Наша цел е секој граѓанин на Македонија да има свој фидан. Со 2 милиони фиданки, ќе создадеме зелена иднина за нашата земја. Придружи се и ти во оваа мисија!" data-en="Our goal is for every citizen of Macedonia to have their own sapling. With 2 million saplings, we will create a green future for our country. Join us in this mission!" data-sq="Qëllimi ynë është që çdo qytetar i Maqedonisë të ketë fidanin e tij. Me 2 milion fidanë, do të krijojmë një të ardhme të gjelbër për vendin tonë. Bashkohu edhe ti në këtë mision!">Наша цел е секој граѓанин на Македонија да има свој фидан. Со 2 милиони фиданки, ќе создадеме зелена иднина за нашата земја. Придружи се и ти во оваа мисија!</p>
-            <form id="donationForm" class="max-w-md mx-auto space-y-6 bg-white p-8 rounded-xl shadow-soft animate-section" novalidate>
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="100">
-                        <p class="text-primary font-bold" data-mk="1 Фиданка" data-en="1 Sapling" data-sq="1 Fidani">1 Фиданка</p>
-                        <p data-mk="100 ден." data-en="100 den." data-sq="100 den.">100 ден.</p>
-                    </div>
-                    <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="500">
-                        <p class="text-primary font-bold" data-mk="5 Фиданки" data-en="5 Saplings" data-sq="5 Fidane">5 Фиданки</p>
-                        <p data-mk="500 ден." data-en="500 den." data-sq="500 den.">500 ден.</p>
-                    </div>
-                    <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="1000">
-                        <p class="text-primary font-bold" data-mk="10 Фиданки" data-en="10 Saplings" data-sq="10 Fidane">10 Фиданки</p>
-                        <p data-mk="1000 ден." data-en="1000 den." data-sq="1000 den.">1000 ден.</p>
-                    </div>
-                    <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="custom">
-                        <p class="text-primary font-bold" data-mk="Прилагодено" data-en="Custom" data-sq="Personalizuar">Прилагодено</p>
-                        <p data-mk="Избери износ" data-en="Choose amount" data-sq="Zgjidh shumën">Избери износ</p>
-                    </div>
-                    <div id="customSapling" class="border-2 border-gray-300 rounded-lg p-4">
-                        <label for="customSaplingCount" class="text-primary font-bold block mb-2"
-                               data-mk="Број на Фиданки" data-en="Number of Saplings" data-sq="Numri i Fidaneve">Број на Фиданки</label>
-                        <input type="number" id="customSaplingCount" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" min="1" placeholder="Внеси број" data-mk="Внеси број" data-en="Enter number" data-sq="Fut numrin">
-                        <p class="text-sm text-gray-600 mt-2" id="customAmountDisplay" data-mk="Износ: 0 ден." data-en="Amount: 0 den." data-sq="Shuma: 0 den.">Износ: 0 ден.</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="fullName" data-mk="Полно име" data-en="Full Name" data-sq="Emri i Plotë">Полно име</label>
-                    <input type="text" id="fullName" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Полно име" data-mk="Полно име" data-en="Full Name" data-sq="Emri i Plotë" required>
-                </div>
-                <div class="form-group">
-                    <label for="email" data-mk="Е-пошта" data-en="Email" data-sq="Email">Е-пошта</label>
-                    <input type="email" id="email" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Е-пошта" data-mk="Е-пошта" data-en="Email" data-sq="Email" required>
-                </div>
-                <div class="form-group">
-                    <label for="forWhom" data-mk="За кого (опционално)" data-en="For Whom (optional)" data-sq="Për Kënd (opsionale)">За кого (опционално)</label>
-                    <input type="text" id="forWhom" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="За кого (опционално)" data-mk="За кого (опционално)" data-en="For Whom (optional)" data-sq="Për Kënd (opsionale)">
-                </div>
-                <div class="form-group">
-                    <label for="message" data-mk="Порака (опционално)" data-en="Message (optional)" data-sq="Mesazhi (opsionale)">Порака (опционално)</label>
-                    <textarea id="message" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Порака (опционално)" data-mk="Порака (опционално)" data-en="Message (optional)" data-sq="Mesazhi (opsionale)"></textarea>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="form-group">
-                        <label for="cardNumber" data-mk="Број на картичка" data-en="Card Number" data-sq="Numri i Kartës">Број на картичка</label>
-                        <input type="text" id="cardNumber" class="border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Број на картичка" data-mk="Број на картичка" data-en="Card Number" data-sq="Numri i Kartës" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="expiryDate" data-mk="MM/YY" data-en="MM/YY" data-sq="MM/YY">Датум на истекување</label>
-                        <input type="text" id="expiryDate" class="border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="MM/YY" data-mk="MM/YY" data-en="MM/YY" data-sq="MM/YY" maxlength="5" required pattern="\d{2}/\d{2}">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="cvv" data-mk="CVV" data-en="CVV" data-sq="CVV">CVV</label>
-                    <input type="text" id="cvv" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="CVV" data-mk="CVV" data-en="CVV" data-sq="CVV" required pattern="\d{3}">
-                </div>
-                <div class="payment-icons">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-amex"></i>
-                    <i class="fab fa-cc-paypal"></i>
-                </div>
-                <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-secondary transition w-full shadow-md hover:shadow-glow" data-mk="ДОНИРАЈ" data-en="DONATE" data-sq="DHURO">ДОНИРАЈ</button>
-            </form>
-            <div id="initialThankYou" class="hidden mt-8">
-                <h2 id="thankYouTitle" class="font-display" data-mk="Благодариме!" data-en="Thank You!" data-sq="Faleminderit!">Благодариме!</h2>
-                <p id="thankYouText" data-mk="Вашата донација е прифатена." data-en="Your donation has been accepted." data-sq="Donacioni juaj është pranuar.">Вашата донација е прифатена.</p>
-                <a href="thanks.html" class="bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-white transition shadow-md" data-mk="ВИДИ СЕРТИФИКАТ" data-en="VIEW CERTIFICATE" data-sq="SHIKO CERTIFIKATËN">ВИДИ СЕРТИФИКАТ</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section with Map and Form -->
-    <section id="contact" class="py-20 bg-white animate-section">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-primary mb-12 font-display"
-                data-mk="Контактирај Не"
-                data-en="Contact Us"
-                data-sq="Kontaktoni Ne">Контактирај Не</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold text-secondary mb-6 font-display" data-mk="Испрати Порака" data-en="Send Message" data-sq="Dërgo Mesazh">Испрати Порака</h3>
-                    <form id="contactForm" class="space-y-6">
-                        <input type="text" id="contactName" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Име" data-mk="Име" data-en="Name" data-sq="Emri">
-                        <input type="email" id="contactEmail" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Е-пошта" data-mk="Е-пошта" data-en="Email" data-sq="Email">
-                        <textarea id="contactMessage" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Порака" data-mk="Порака" data-en="Message" data-sq="Mesazhi"></textarea>
-                        <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-secondary transition shadow-md hover:shadow-glow" data-mk="ИСПРАТИ" data-en="SEND" data-sq="DËRGO">ИСПРАТИ</button>
-                    </form>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-secondary mb-6 font-display" data-mk="Наша Локација" data-en="Our Location" data-sq="Lokacioni Ynë">Наша Локација</h3>
-                    <div class="h-64 bg-gray-200 rounded-xl overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.065!2d21.425435!3d41.996991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415a6f5d4d3c3%3A0x5e7a8b5a9d4e6f7!2sSkopje%2C%20North%20Macedonia!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                    <div class="mt-6 space-y-4 text-gray-700">
-                        <p><i class="fas fa-map-marker-alt text-accent mr-2"></i> <span data-mk="Ул. Пример 123, Скопје" data-en="Example St 123, Skopje" data-sq="Rr. Shembull 123, Shkup">Ул. Пример 123, Скопје</span></p>
-                        <p><i class="fas fa-phone-alt text-accent mr-2"></i> +389 2 123 456</p>
-                        <p><i class="fas fa-envelope text-accent mr-2"></i> info@zelenamakedonija.mk</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer with Social Links and Newsletter -->
-    <footer class="bg-dark text-white pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-6">
-                        <div class="bg-accent rounded-full p-3 mr-4">
-                            <div class="icon-stack">
-                                <i class="fas fa-mountain"></i>
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold font-display" data-mk="Зелена Македонија" data-en="Green Macedonia" data-sq="Green Maqedoni">Зелена Македонија</h3>
-                            <p class="text-sm text-light" data-mk="Фондација" data-en="Foundation" data-sq="Fondacioni">Фондација</p>
+<!-- Footer with Social Links and Newsletter -->
+<footer class="bg-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center mb-6">
+                    <div class="bg-accent rounded-full p-3 mr-4">
+                        <div class="icon-stack">
+                            <i class="fas fa-mountain"></i>
+                            <i class="fas fa-leaf"></i>
                         </div>
                     </div>
-                    <p class="mb-6 text-light"
-                       data-mk="Прва народна иницијатива против ерозија и за масовно пошумување на Македонија. Инспирирани од TEMA."
-                       data-en="First national initiative against erosion and massive reforestation of Macedonia. Inspired by TEMA."
-                       data-sq="Iniciativa e parë kombëtare kundër erozionit dhe ripyllëzimit masiv të Maqedonisë. I frymëzuar nga TEMA.">Прва народна иницијатива...</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-accent transition"><i class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="hover:text-accent transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter text-xl"></i></a>
-                        <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    <div>
+                        <h3 class="text-2xl font-bold font-display" data-mk="Зелена Македонија" data-en="Green Macedonia" data-sq="Green Maqedoni">Зелена Македонија</h3>
+                        <p class="text-sm text-light" data-mk="Фондација" data-en="Foundation" data-sq="Fondacioni">Фондација</p>
                     </div>
                 </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 font-display" data-mk="Линкови" data-en="Links" data-sq="Lidhje">Линкови</h4>
-                    <ul class="space-y-3 text-light">
-                        <li><a href="#home" class="hover:text-accent transition" data-mk="Почетна" data-en="Home" data-sq="Ballina">Почетна</a></li>
-                        <li><a href="#about" class="hover:text-accent transition" data-mk="За Нас" data-en="About Us" data-sq="Rreth Nesh">За Нас</a></li>
-                        <li><a href="#donate" class="hover:text-accent transition" data-mk="Донирај" data-en="Donate" data-sq="Dhuro">Донирај</a></li>
-                        <li><a href="#contact" class="hover:text-accent transition" data-mk="Контакт" data-en="Contact" data-sq="Kontakt">Контакт</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 font-display" data-mk="Полезни Линкови" data-en="Useful Links" data-sq="Lidhje të Dobishme">Полезни Линкови</h4>
-                    <ul class="space-y-3 text-light">
-                        <li><a href="privacy.html" class="hover:text-accent transition" data-mk="Политика за Приватност" data-en="Privacy Policy" data-sq="Politika e Privatësisë">Политика за Приватност</a></li>
-                        <li><a href="terms.html" class="hover:text-accent transition" data-mk="Услови за Користење" data-en="Terms of Use" data-sq="Kushtet e Përdorimit">Услови за Користење</a></li>
-                        <li><a href="faq.html" class="hover:text-accent transition" data-mk="ЧПП" data-en="FAQ" data-sq="Pyetje të Shpeshta">ЧПП</a></li>
-                        <li><a href="gallery.html" class="hover:text-accent transition" data-mk="Галерија" data-en="Gallery" data-sq="Galeria">Галерија</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 font-display" data-mk="Претплати се на Билтен" data-en="Subscribe to Newsletter" data-sq="Abonohu në Buletin">Претплати се на Билтен</h4>
-                    <p class="mb-4 text-light" data-mk="Добиј новости за нашите проекти и акции." data-en="Get updates on our projects and actions." data-sq="Merr përditësime për projektet dhe aksionet tona.">Добиј новости...</p>
-                    <form id="newsletterForm" class="flex">
-                        <input type="email" id="newsletterEmail" class="flex-grow border-2 border-light rounded-l-lg p-3 focus:border-accent bg-transparent text-white placeholder-light" placeholder="Е-пошта" data-mk="Е-пошта" data-en="Email" data-sq="Email">
-                        <button type="submit" class="bg-accent text-primary font-bold py-3 px-6 rounded-r-lg hover:bg-lime-300 transition" data-mk="ПРЕТПЛАТИ СЕ" data-en="SUBSCRIBE" data-sq="ABONOHU">ПРЕТПЛАТИ СЕ</button>
-                    </form>
+                <p class="mb-6 text-light"
+                   data-mk="Прва народна иницијатива против ерозија и за масовно пошумување на Македонија. Инспирирани од TEMA."
+                   data-en="First national initiative against erosion and massive reforestation of Macedonia. Inspired by TEMA."
+                   data-sq="Iniciativa e parë kombëtare kundër erozionit dhe ripyllëzimit masiv të Maqedonisë. I frymëzuar nga TEMA.">Прва народна иницијатива...</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-accent transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="hover:text-accent transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in text-xl"></i></a>
                 </div>
             </div>
-            <div class="border-t border-gray-600 mt-12 pt-8 text-center text-sm text-gray-400">
-                <p data-mk="© 2025 Зелена Македонија Фондација. Сите права се задржани."
-                   data-en="© 2025 Green Macedonia Foundation. All rights reserved."
-                   data-sq="© 2025 Fondacioni Green Maqedoni. Të gjitha të drejtat e rezervuara.">© 2025 Зелена Македонија Фондација. Сите права се задржани.</p>
+            <div>
+                <h4 class="text-lg font-bold mb-6 font-display" data-mk="Линкови" data-en="Links" data-sq="Lidhje">Линкови</h4>
+                <ul class="space-y-3 text-light">
+                    <li><a href="#home" class="hover:text-accent transition" data-mk="Почетна" data-en="Home" data-sq="Ballina">Почетна</a></li>
+                    <li><a href="#about" class="hover:text-accent transition" data-mk="За Нас" data-en="About Us" data-sq="Rreth Nesh">За Нас</a></li>
+                    <li><a href="#donate" class="hover:text-accent transition" data-mk="Донирај" data-en="Donate" data-sq="Dhuro">Донирај</a></li>
+                    <li><a href="#contact" class="hover:text-accent transition" data-mk="Контакт" data-en="Contact" data-sq="Kontakt">Контакт</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6 font-display" data-mk="Полезни Линкови" data-en="Useful Links" data-sq="Lidhje të Dobishme">Полезни Линкови</h4>
+                <ul class="space-y-3 text-light">
+                    <li><a href="privacy.html" class="hover:text-accent transition" data-mk="Политика за Приватност" data-en="Privacy Policy" data-sq="Politika e Privatësisë">Политика за Приватност</a></li>
+                    <li><a href="terms.html" class="hover:text-accent transition" data-mk="Услови за Користење" data-en="Terms of Use" data-sq="Kushtet e Përdorimit">Услови за Користење</a></li>
+                    <li><a href="faq.html" class="hover:text-accent transition" data-mk="ЧПП" data-en="FAQ" data-sq="Pyetje të Shpeshta">ЧПП</a></li>
+                    <li><a href="gallery.html" class="hover:text-accent transition" data-mk="Галерија" data-en="Gallery" data-sq="Galeria">Галерија</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6 font-display" data-mk="Претплати се на Билтен" data-en="Subscribe to Newsletter" data-sq="Abonohu në Buletin">Претплати се на Билтен</h4>
+                <p class="mb-4 text-light" data-mk="Добиј новости за нашите проекти и акции." data-en="Get updates on our projects and actions." data-sq="Merr përditësime për projektet dhe aksionet tona.">Добиј новости...</p>
+                <form id="newsletterForm" class="flex">
+                    <input type="email" id="newsletterEmail" class="flex-grow border-2 border-light rounded-l-lg p-3 focus:border-accent bg-transparent text-white placeholder-light" placeholder="Е-пошта" data-mk="Е-пошта" data-en="Email" data-sq="Email">
+                    <button type="submit" class="bg-accent text-primary font-bold py-3 px-6 rounded-r-lg hover:bg-lime-300 transition" data-mk="ПРЕТПЛАТИ СЕ" data-en="SUBSCRIBE" data-sq="ABONOHU">ПРЕТПЛАТИ СЕ</button>
+                </form>
             </div>
         </div>
-    </footer>
+        <div class="border-t border-gray-600 mt-12 pt-8 text-center text-sm text-gray-400">
+            <p data-mk="© 2025 Зелена Македонија Фондација. Сите права се задржани."
+               data-en="© 2025 Green Macedonia Foundation. All rights reserved."
+               data-sq="© 2025 Fondacioni Green Maqedoni. Të gjitha të drejtat e rezervuara.">© 2025 Зелена Македонија Фондација. Сите права се задржани.</p>
+        </div>
+    </div>
+</footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-accent text-primary p-4 rounded-full shadow-lg hover:bg-lime-300 transition opacity-0">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-8 right-8 bg-accent text-primary p-4 rounded-full shadow-lg hover:bg-lime-300 transition opacity-0">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
-    <!-- JavaScript with Enhanced Functionality -->
-    <script>
-        // Language Switch
-        function switchLang(lang) {
-            document.querySelectorAll('[data-mk],[data-en],[data-sq]').forEach(el => {
-                const text = el.getAttribute(`data-${lang}`);
-                if (text !== null) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
-                        if (el.tagName === 'SELECT') {
-                            Array.from(el.options).forEach(opt => {
-                                const optText = opt.getAttribute(`data-${lang}`);
-                                if (optText) opt.text = optText;
-                            });
-                        } else {
-                            el.placeholder = text;
-                        }
-                    } else if (el.tagName === 'LABEL') {
-                        el.textContent = text;
+<!-- JavaScript with Enhanced Functionality -->
+<script>
+    // Language Switch
+    function switchLang(lang) {
+        document.querySelectorAll('[data-mk],[data-en],[data-sq]').forEach(el => {
+            const text = el.getAttribute(`data-${lang}`);
+            if (text !== null) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
+                    if (el.tagName === 'SELECT') {
+                        Array.from(el.options).forEach(opt => {
+                            const optText = opt.getAttribute(`data-${lang}`);
+                            if (optText) opt.text = optText;
+                        });
                     } else {
-                        el.textContent = text;
+                        el.placeholder = text;
                     }
-                }
-            });
-            const title = document.querySelector('title');
-            if (title) title.textContent = title.getAttribute(`data-${lang}`) || title.textContent;
-            document.querySelectorAll('.lang-btn').forEach(b => {
-                b.classList.toggle('text-primary', b.dataset.lang === lang);
-                b.classList.toggle('font-bold', b.dataset.lang === lang);
-                b.classList.toggle('text-gray-600', b.dataset.lang !== lang);
-            });
-            document.documentElement.lang = lang;
-            localStorage.setItem('preferredLang', lang);
-        }
-
-        // Mobile Menu Toggle
-        const mobileBtn = document.getElementById('mobileBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-        });
-
-        // Slider with Auto Play and Pause on Hover
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-        let sliderInterval = setInterval(nextSlide, 5000);
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        document.querySelector('.slider').addEventListener('mouseenter', () => clearInterval(sliderInterval));
-        document.querySelector('.slider').addEventListener('mouseleave', () => sliderInterval = setInterval(nextSlide, 5000));
-
-        // Counter Animation
-        document.querySelectorAll('.counter-number').forEach(counter => {
-            const target = parseInt(counter.dataset.count);
-            let count = 0;
-            const increment = target / 200;
-            const updateCount = () => {
-                count += increment;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count).toLocaleString();
-                    requestAnimationFrame(updateCount);
+                } else if (el.tagName === 'LABEL') {
+                    el.textContent = text;
                 } else {
-                    counter.innerText = target.toLocaleString();
+                    el.textContent = text;
                 }
-            };
-            updateCount();
-        });
-
-        // Donation Options
-        document.querySelectorAll('.donation-option').forEach(opt => {
-            opt.addEventListener('click', function() {
-                document.querySelectorAll('.donation-option').forEach(o => o.classList.remove('active'));
-                this.classList.add('active');
-                const customDiv = document.getElementById('customSapling');
-                customDiv.style.display = this.dataset.amount === 'custom' ? 'block' : 'none';
-            });
-        });
-
-        // Custom Amount Calculation
-        document.getElementById('customSaplingCount')?.addEventListener('input', function() {
-            const count = parseInt(this.value) || 0;
-            document.getElementById('customAmountDisplay').textContent = `Износ: ${count * 100} ден.`;
-        });
-
-        // Donation Form Submit - Scroll sorunu çözüldü (form gizleniyor, teşekkür aynı yerde kalıyor)
-        document.getElementById('donationForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const fullName = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            let selectedAmount = document.querySelector('.donation-option.active')?.dataset.amount;
-            let saplings = selectedAmount === 'custom' ? parseInt(document.getElementById('customSaplingCount').value) || 0 : parseInt(selectedAmount) / 100;
-            if (fullName && email && saplings > 0) {
-                // Update unique donors (emails)
-                let emails = JSON.parse(localStorage.getItem('donorEmails') || '[]');
-                if (!emails.includes(email)) {
-                    emails.push(email);
-                    localStorage.setItem('donorEmails', JSON.stringify(emails));
-                }
-                document.getElementById('uniqueDonorCount').innerText = emails.length.toLocaleString();
-
-                // Update total saplings
-                let totalSaplings = parseInt(localStorage.getItem('totalSaplings') || '0') + saplings;
-                localStorage.setItem('totalSaplings', totalSaplings);
-                document.getElementById('totalSaplings').innerText = totalSaplings.toLocaleString();
-
-                // Hide form, show thank you in place
-                this.style.display = 'none';
-                const thankYou = document.getElementById('initialThankYou');
-                thankYou.style.display = 'block';
-
-                // Scroll sorunu için: Formun olduğu yere geri dön
-                window.scrollTo({ top: document.getElementById('donate').offsetTop - 100, behavior: 'smooth' });
-            } else {
-                alert('Молиме пополнете ги сите задолжителни полиња.');
             }
         });
-
-        // Contact Form Submit (simulate)
-        document.getElementById('contactForm')?.addEventListener('submit', e => {
-            e.preventDefault();
-            alert('Пораката е испратена! Благодариме.');
+        const title = document.querySelector('title');
+        if (title) title.textContent = title.getAttribute(`data-${lang}`) || title.textContent;
+        document.querySelectorAll('.lang-btn').forEach(b => {
+            b.classList.toggle('text-primary', b.dataset.lang === lang);
+            b.classList.toggle('font-bold', b.dataset.lang === lang);
+            b.classList.toggle('text-gray-600', b.dataset.lang !== lang);
         });
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferredLang', lang);
+    }
 
-        // Newsletter Submit (simulate)
-        document.getElementById('newsletterForm')?.addEventListener('submit', e => {
-            e.preventDefault();
-            alert('Претплатени сте! Благодариме.');
+    // Mobile Menu Toggle - DÜZELTİLMİŞ (Açık/Kapalı class ile)
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+    });
+
+    // Slider with Auto Play and Pause on Hover
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    let sliderInterval = setInterval(nextSlide, 5000);
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+    document.querySelector('.slider').addEventListener('mouseenter', () => clearInterval(sliderInterval));
+    document.querySelector('.slider').addEventListener('mouseleave', () => sliderInterval = setInterval(nextSlide, 5000));
+
+    // Counter Animation
+    document.querySelectorAll('.counter-number').forEach(counter => {
+        const target = parseInt(counter.dataset.count);
+        let count = 0;
+        const increment = target / 200;
+        const updateCount = () => {
+            count += increment;
+            if (count < target) {
+                counter.innerText = Math.ceil(count).toLocaleString();
+                requestAnimationFrame(updateCount);
+            } else {
+                counter.innerText = target.toLocaleString();
+            }
+        };
+        updateCount();
+    });
+
+    // Donation Options
+    document.querySelectorAll('.donation-option').forEach(opt => {
+        opt.addEventListener('click', function() {
+            document.querySelectorAll('.donation-option').forEach(o => o.classList.remove('active'));
+            this.classList.add('active');
+            const customDiv = document.getElementById('customSapling');
+            customDiv.style.display = this.dataset.amount === 'custom' ? 'block' : 'none';
         });
+    });
 
-        // Back to Top
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('opacity-0', window.scrollY < 300);
-            backToTop.classList.toggle('opacity-100', window.scrollY >= 300);
-        });
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    // Custom Amount Calculation
+    document.getElementById('customSaplingCount')?.addEventListener('input', function() {
+        const count = parseInt(this.value) || 0;
+        document.getElementById('customAmountDisplay').textContent = `Износ: ${count * 100} ден.`;
+    });
 
-        // Cookie Handling
-        if (localStorage.getItem('cookiesAccepted')) {
-            document.getElementById('cookieBanner').style.display = 'none';
+    // Donation Form Submit - Sayfanın sonuna gitme sorunu çözüldü (form gizleniyor, teşekkür aynı yerde kalıyor)
+    document.getElementById('donationForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        let selectedAmount = document.querySelector('.donation-option.active')?.dataset.amount;
+        let saplings = selectedAmount === 'custom' ? parseInt(document.getElementById('customSaplingCount').value) || 0 : parseInt(selectedAmount) / 100;
+        if (fullName && email && saplings > 0) {
+            // Update unique donors (emails)
+            let emails = JSON.parse(localStorage.getItem('donorEmails') || '[]');
+            if (!emails.includes(email)) {
+                emails.push(email);
+                localStorage.setItem('donorEmails', JSON.stringify(emails));
+            }
+            document.getElementById('uniqueDonorCount').innerText = emails.length.toLocaleString();
+
+            // Update total saplings
+            let totalSaplings = parseInt(localStorage.getItem('totalSaplings') || '0') + saplings;
+            localStorage.setItem('totalSaplings', totalSaplings);
+            document.getElementById('totalSaplings').innerText = totalSaplings.toLocaleString();
+
+            // Hide form, show thank you in place
+            this.style.display = 'none';
+            const thankYou = document.getElementById('initialThankYou');
+            thankYou.style.display = 'block';
+        } else {
+            alert('Молиме пополнете ги сите задолжителни полиња.');
         }
-        document.getElementById('acceptCookies').addEventListener('click', () => {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookieBanner').style.display = 'none';
-        });
+    });
 
-        // Load Preferred Language
-        const preferredLang = localStorage.getItem('preferredLang') || 'mk';
-        switchLang(preferredLang);
+    // Contact Form Submit (simulate)
+    document.getElementById('contactForm')?.addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Пораката е испратена! Благодариме.');
+    });
 
-        // Language Buttons
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => switchLang(btn.dataset.lang));
-        });
+    // Newsletter Submit (simulate)
+    document.getElementById('newsletterForm')?.addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Претплатени сте! Благодариме.');
+    });
 
-        // Load initial unique donors and total saplings from localStorage
-        let emails = JSON.parse(localStorage.getItem('donorEmails') || '[]');
-        document.getElementById('uniqueDonorCount').innerText = emails.length.toLocaleString();
-        let totalSaplings = parseInt(localStorage.getItem('totalSaplings') || '0');
-        document.getElementById('totalSaplings').innerText = totalSaplings.toLocaleString();
-    </script>
+    // Back to Top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('opacity-0', window.scrollY < 300);
+        backToTop.classList.toggle('opacity-100', window.scrollY >= 300);
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Cookie Handling
+    if (localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookieBanner').style.display = 'none';
+    }
+    document.getElementById('acceptCookies').addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookieBanner').style.display = 'none';
+    });
+
+    // Load Preferred Language
+    const preferredLang = localStorage.getItem('preferredLang') || 'mk';
+    switchLang(preferredLang);
+
+    // Language Buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => switchLang(btn.dataset.lang));
+    });
+
+    // Load initial unique donors and total saplings from localStorage
+    let emails = JSON.parse(localStorage.getItem('donorEmails') || '[]');
+    document.getElementById('uniqueDonorCount').innerText = emails.length.toLocaleString();
+    let totalSaplings = parseInt(localStorage.getItem('totalSaplings') || '0');
+    document.getElementById('totalSaplings').innerText = totalSaplings.toLocaleString();
+</script>
 </body>
 </html>
