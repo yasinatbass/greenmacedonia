@@ -128,6 +128,14 @@
             header .lg\:flex { display: none; }
             header .lg\:hidden { display: block; }
             .lang-btn { padding: 0.5rem 1rem; font-size: 0.875rem; }
+            /* Mobil ödeme formu düzeltmeleri */
+            .grid-cols-2 { grid-template-columns: 1fr; }
+            .form-group { margin-bottom: 1rem; }
+            label { font-size: 1rem; }
+            input, textarea { padding: 0.75rem; font-size: 1rem; }
+            .payment-icons { gap: 0.5rem; }
+            .payment-icons i { font-size: 1.5rem; }
+            button[type="submit"] { padding: 1rem; font-size: 1.1rem; }
         }
         @media (min-width: 769px) {
             .slider { height: 600px; }
@@ -343,7 +351,7 @@
                 <label for="message" data-mk="Порака (опционално)" data-en="Message (optional)" data-sq="Mesazhi (opsionale)">Порака (опционално)</label>
                 <textarea id="message" class="w-full border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Порака (опционално)" data-mk="Порака (опционално)" data-en="Message (optional)" data-sq="Mesazhi (opsionale)"></textarea>
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="form-group">
                     <label for="cardNumber" data-mk="Број на картичка" data-en="Card Number" data-sq="Numri i Kartës">Број на картичка</label>
                     <input type="text" id="cardNumber" class="border-2 border-gray-300 rounded-lg p-3 focus:border-secondary" placeholder="Број на картичка" data-mk="Број на картичка" data-en="Card Number" data-sq="Numri i Kartës" required>
