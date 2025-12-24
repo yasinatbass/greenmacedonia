@@ -4,16 +4,16 @@
     <base target="_self">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-mk="Зелена Македонија Фондација | Заштита на Природата и Пошумување" 
-           data-en="Green Macedonia Foundation | Nature Protection and Reforestation" 
-           data-sq="Fondacioni Green Maqedoni | Mbrojtja e Natyrës dhe Ripyllëzimi">
-        Зелена Македонија Фондација | Заштита на Природата и Пошумување
+    <title data-mk="Зелена Македонија - Пошумување и Заштита" 
+           data-en="Green Macedonia - Reforestation and Protection" 
+           data-sq="Green Maqedoni - Ripyllëzimi dhe Mbrojtja">
+        Зелена Македонија - Пошумување и Заштита
     </title>
     <meta name="description" content="Прва народна иницијатива против ерозија и за масовно пошумување на Македонија. Инспирирани од TEMA, ние создаваме зелена иднина преку фидан донации.">
     <meta name="keywords" content="зелена Македонија, ерозија, пошумување, фидан донација, природа, TEMA, биоразновидност, клима">
     <meta property="og:title" content="Зелена Македонија Фондација">
-    <meta property="og:description" content="Заштитуваме ја природата преку фидан донации за цел од 1 милион фиданки. Придружи се во борбата против климатските промени.">
-    <meta property="og:image" content="https://your-logo-url.com/logo.png">
+    <meta property="og:description" content="Заштитуваме ја природата преку фидан донации за цел од 2 милиони фиданки. Придружи се во борбата против климатските промени.">
+    <meta property="og:image" content="https://i.natgeofe.com/n/6c23e0bc-bdfa-4661-b304-76a61c8f4737/boat-matka-canyon-macedonia.jpg">
     <meta property="og:url" content="https://your-website-url.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -86,7 +86,7 @@
         #initialThankYou p { margin-bottom: 15px; color: var(--secondary); }
         #customSapling { display: none; animation: fade-in 0.5s ease; }
         /* Slider Styles */
-        .slider { position: relative; overflow: hidden; height: 600px; border-radius: 0 0 50px 50px; }
+        .hero-static { position: relative; overflow: hidden; height: 600px; border-radius: 0 0 50px 50px; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease, transform 1s ease; transform: scale(1.05); }
         .slide.active { opacity: 1; transform: scale(1); }
         /* Parallax Effect for Sections */
@@ -101,9 +101,9 @@
         .leaf1 { top: -60px; left: -20px; transform: rotate(45deg); animation: grow-leaf 1s ease-in-out 1.5s forwards; }
         .leaf2 { top: -60px; left: 0px; transform: rotate(-45deg); animation: grow-leaf 1s ease-in-out 1.8s forwards; }
         .leaf3 { top: -90px; left: -10px; animation: grow-leaf 1s ease-in-out 2.2s forwards; }
-        /* Mobile Optimization - Tüm mobil sorunları çözüldü */
+        /* Mobile Optimization */
         @media (max-width: 768px) {
-            .slider { height: 400px; border-radius: 0 0 30px 30px; }
+            .hero-static { height: 400px; border-radius: 0 0 30px 30px; }
             .text-4xl { font-size: 2.25rem; }
             .text-3xl { font-size: 1.75rem; }
             .text-xl { font-size: 1rem; }
@@ -144,7 +144,7 @@
             button[type="submit"] { padding: 1rem; font-size: 1.1rem; }
         }
         @media (min-width: 769px) {
-            .slider { height: 600px; }
+            .hero-static { height: 600px; }
         }
         /* Accessibility Improvements */
         a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -156,9 +156,24 @@
         #donationForm .form-group { margin-bottom: 1rem; }
         .payment-icons { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
         .payment-icons i { font-size: 2rem; color: var(--secondary); }
+        /* Pop-up Styles */
+        #popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; }
+        #popup-content { position: relative; max-width: 80%; max-height: 80%; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        #popup-image { width: 100%; height: 300px; object-fit: cover; }
+        #popup-text { padding: 20px; text-align: center; font-size: 1.5rem; color: var(--primary); font-weight: bold; }
+        #popup-close { position: absolute; top: 10px; right: 10px; font-size: 2rem; color: white; cursor: pointer; }
     </style>
 </head>
 <body class="font-sans bg-white text-gray-800 antialiased">
+
+<!-- Pop-up with Slider-like Design -->
+<div id="popup">
+    <div id="popup-content">
+        <span id="popup-close" class="fas fa-times"></span>
+        <img id="popup-image" src="https://www.wanderlustmagazine.com/wp-content/uploads/2023/11/magazine-alta_boar-caught-on-camera-trap-in-pelister-national-park-macedonia.jpg" alt="Makedonya Doğası">
+        <p id="popup-text" data-mk="Зачувајте ја убавината на Македонија! Секој фидан е чекор кон зелена иднина." data-en="Preserve the beauty of Macedonia! Every sapling is a step towards a green future." data-sq="Ruaj bukurinë e Maqedonisë! Çdo fidan është një hap drejt një të ardhmeje të gjelbër.">Зачувајте ја убавината на Македонија! Секој фидан е чекор кон зелена иднина.</p>
+    </div>
+</div>
 
 <!-- Cookie Banner with Improved Accessibility -->
 <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-primary text-white p-4 flex flex-col md:flex-row justify-between items-center z-50 shadow-lg">
@@ -246,7 +261,7 @@
 </header>
 
 <!-- Hero Slider -->
-<section class="relative slider parallax animate-section" id="home" style="background-image: url('https://images.unsplash.com/photo-1502085671122-a6f9dda8af5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+<section class="relative hero-static parallax animate-section" id="home" style="background-image: url('https://i.natgeofe.com/n/6c23e0bc-bdfa-4661-b304-76a61c8f4737/boat-matka-canyon-macedonia.jpg');">
     <!-- Slide 1 -->
     <div class="slide active">
         <img src="https://images.squarespace-cdn.com/content/v1/657b302ad0d11e71b22b40c3/1705505225747-RRR5MBHJM352JNUAR0TF/photo_2038.jpg" alt="Донирај Hero" class="absolute inset-0 w-full h-full object-cover">
@@ -257,43 +272,10 @@
                 data-en="Donate and Create a Green Future!"
                 data-sq="Dhuro dhe Krijo një të Ardhme të Gjelbër!">Донирај и Создади Зелена Иднина!</h2>
             <p class="text-2xl mb-10"
-                data-mk="Секој фидан е чекор кон почиста Македонија. 100 денари = 1 фиданка. Цел: 1.000.000 фиданки!"
-                data-en="Every sapling is a step towards a cleaner Macedonia. 100 denars = 1 sapling. Goal: 1,000,000 saplings!"
-                data-sq="Çdo fidan është një hap drejt një Maqedonie më të pastër. 100 denarë = 1 fidan. Qëllimi: 1.000.000 fidanë!">Секој фидан е чекор...</p>
+                data-mk="Секој фидан е чекор кон почиста Македонија. 100 денари = 1 фиданка. Цел: 2.000.000 фиданки!"
+                data-en="Every sapling is a step towards a cleaner Macedonia. 100 denars = 1 sapling. Goal: 2,000,000 saplings!"
+                data-sq="Çdo fidan është një hap drejt një Maqedonie më të pastër. 100 denarë = 1 fidan. Qëllimi: 2.000.000 fidanë!">Секој фидан е чекор...</p>
             <a href="#donate" class="bg-accent text-primary font-bold py-4 px-10 rounded-full text-xl hover:bg-white transition shadow-lg hover:shadow-glow" data-mk="ДОНИРАЈ СЕГА" data-en="DONATE NOW" data-sq="DHURO TANI">ДОНИРАЈ СЕГА</a>
-        </div>
-    </div>
-    <!-- Diğer slide'lar aynı -->
-</section>
-
-<!-- About Section with Stats and Parallax -->
-<section id="about" class="py-20 bg-neutral parallax animate-section" style="background-image: url('https://images.unsplash.com/photo-1448375240586-082707db075b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center text-primary mb-12 font-display"
-            data-mk="За Зелена Македонија Фондација"
-            data-en="About Green Macedonia Foundation"
-            data-sq="Rreth Fondacionit Green Maqedoni">За Зелена Македонија Фондација</h2>
-        <div class="max-w-3xl mx-auto text-center text-lg mb-16 text-gray-700">
-            <p data-mk="Инспирирани од TEMA Вакфот во Турција, ние сме првата национална иницијатива во Македонија фокусирана на борба против ерозија, масовно пошумување и заштита на биоразновидноста. Нашата мисија е да создадеме одржлива зелена иднина преку фидан донации со цел од 1 милион фиданки. Проектот допрва започнува, но со ваша поддршка ќе постигнеме големи резултати."
-               data-en="Inspired by TEMA Foundation in Turkey, we are the first national initiative in Macedonia focused on fighting erosion, massive reforestation, and protecting biodiversity. Our mission is to create a sustainable green future through sapling donations with a goal of 1 million saplings. The project is just starting, but with your support, we will achieve great results."
-               data-sq="I frymëzuar nga Fondacioni TEMA në Turqi, ne jemi iniciativa e parë kombëtare në Maqedoni e fokusuar në luftën kundër erozionit, ripyllëzimin masiv dhe mbrojtjen e biodiversitetit. Misioni ynë është të krijojmë një të ardhme të qëndrueshme të gjelbër përmes donacioneve të fidanëve me një qëllim prej 1 milion fidanësh. Projekti sapo ka filluar, por me mbështetjen tuaj do të arrijmë rezultate të mëdha.">Инспирирани од TEMA Вакфот...</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
-                <i class="fas fa-tree text-5xl text-accent mb-4"></i>
-                <div class="counter-number" data-count="2000000">0</div>
-                <p class="text-secondary font-semibold" data-mk="Цел: Фиданки" data-en="Goal: Saplings" data-sq="Qëllimi: Fidane">Цел: Фиданки</p>
-            </div>
-            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
-                <i class="fas fa-users text-5xl text-accent mb-4"></i>
-                <div class="counter-number" id="uniqueDonorCount" data-count="0">0</div>
-                <p class="text-secondary font-semibold" data-mk="Различни Донатори" data-en="Unique Donors" data-sq="Donatorë të Ndryshem">Различни Донатори</p>
-            </div>
-            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
-                <i class="fas fa-seedling text-5xl text-accent mb-4"></i>
-                <div class="counter-number" id="totalSaplings" data-count="0">0</div>
-                <p class="text-secondary font-semibold" data-mk="Собрани Фиданки" data-en="Collected Saplings" data-sq="Fidanë të Mbledhur">Собрани Фиданки</p>
-            </div>
         </div>
     </div>
 </section>
@@ -308,17 +290,17 @@
         <p class="text-center text-lg mb-8" data-mk="Наша цел е секој граѓанин на Македонија да има свој фидан. Со 2 милиони фиданки, ќе создадеме зелена иднина за нашата земја. Придружи се и ти во оваа мисија!" data-en="Our goal is for every citizen of Macedonia to have their own sapling. With 2 million saplings, we will create a green future for our country. Join us in this mission!" data-sq="Qëllimi ynë është që çdo qytetar i Maqedonisë të ketë fidanin e tij. Me 2 milion fidanë, do të krijojmë një të ardhme të gjelbër për vendin tonë. Bashkohu edhe ti në këtë mision!">Наша цел е секој граѓанин на Македонија да има свој фидан. Со 2 милиони фиданки, ќе создадеме зелена иднина за нашата земја. Придружи се и ти во оваа мисија!</p>
         <form id="donationForm" class="max-w-md mx-auto space-y-6 bg-white p-8 rounded-xl shadow-soft animate-section" novalidate>
             <div class="grid grid-cols-1 gap-4">
-                <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="100">
+                <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="200">
                     <p class="text-primary font-bold" data-mk="1 Фиданка" data-en="1 Sapling" data-sq="1 Fidani">1 Фиданка</p>
-                    <p data-mk="100 ден." data-en="100 den." data-sq="100 den.">100 ден.</p>
-                </div>
-                <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="500">
-                    <p class="text-primary font-bold" data-mk="5 Фиданки" data-en="5 Saplings" data-sq="5 Fidane">5 Фиданки</p>
-                    <p data-mk="500 ден." data-en="500 den." data-sq="500 den.">500 ден.</p>
+                    <p data-mk="200 ден." data-en="200 den." data-sq="200 den.">200 ден.</p>
                 </div>
                 <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="1000">
-                    <p class="text-primary font-bold" data-mk="10 Фиданки" data-en="10 Saplings" data-sq="10 Fidane">10 Фиданки</p>
+                    <p class="text-primary font-bold" data-mk="5 Фиданки" data-en="5 Saplings" data-sq="5 Fidane">5 Фиданки</p>
                     <p data-mk="1000 ден." data-en="1000 den." data-sq="1000 den.">1000 ден.</p>
+                </div>
+                <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="2000">
+                    <p class="text-primary font-bold" data-mk="10 Фиданки" data-en="10 Saplings" data-sq="10 Fidane">10 Фиданки</p>
+                    <p data-mk="2000 ден." data-en="2000 den." data-sq="2000 den.">2000 ден.</p>
                 </div>
                 <div class="donation-option border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:border-secondary" data-amount="custom">
                     <p class="text-primary font-bold" data-mk="Прилагодено" data-en="Custom" data-sq="Personalizuar">Прилагодено</p>
@@ -373,6 +355,29 @@
             <h2 id="thankYouTitle" class="font-display" data-mk="Благодариме!" data-en="Thank You!" data-sq="Faleminderit!">Благодариме!</h2>
             <p id="thankYouText" data-mk="Вашата донација е прифатена." data-en="Your donation has been accepted." data-sq="Donacioni juaj është pranuar.">Вашата донација е прифатена.</p>
             <a href="thanks.html" class="bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-white transition shadow-md" data-mk="ВИДИ СЕРТИФИКАТ" data-en="VIEW CERTIFICATE" data-sq="SHIKO CERTIFIKATËN">ВИДИ СЕРТИФИКАТ</a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Kartları -->
+<section class="py-20 bg-neutral parallax animate-section" style="background-image: url('https://thumbs.dreamstime.com/b/north-macedonia-ohrid-hills-mountains-forest-lake-156464726.jpg');">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
+                <i class="fas fa-tree text-5xl text-accent mb-4"></i>
+                <div class="counter-number" data-count="2000000">0</div>
+                <p class="text-secondary font-semibold" data-mk="Цел: Фиданки" data-en="Goal: Saplings" data-sq="Qëllimi: Fidane">Цел: Фиданки</p>
+            </div>
+            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
+                <i class="fas fa-users text-5xl text-accent mb-4"></i>
+                <div class="counter-number" id="uniqueDonorCount" data-count="0">0</div>
+                <p class="text-secondary font-semibold" data-mk="Различни Донатори" data-en="Unique Donors" data-sq="Donatorë të Ndryshem">Различни Донатори</p>
+            </div>
+            <div class="text-center bg-white p-8 rounded-xl shadow-soft">
+                <i class="fas fa-seedling text-5xl text-accent mb-4"></i>
+                <div class="counter-number" id="totalSaplings" data-count="0">0</div>
+                <p class="text-secondary font-semibold" data-mk="Собрани Фиданки" data-en="Collected Saplings" data-sq="Fidanë të Mbledhur">Собрани Фиданки</p>
+            </div>
         </div>
     </div>
 </section>
@@ -457,7 +462,7 @@
             </div>
             <div>
                 <h4 class="text-lg font-bold mb-6 font-display" data-mk="Претплати се на Билтен" data-en="Subscribe to Newsletter" data-sq="Abonohu në Buletin">Претплати се на Билтен</h4>
-                <p class="mb-4 text-light" data-mk="Добиј новости за нашите проекти и акции." data-en="Get updates on our projects and actions." data-sq="Merr përditësime për projektet dhe aksionet tona.">Добиј новости...</p>
+                <p class="mb-4 text-light" data-mk="Добиј новини за нашите проекти и акции." data-en="Get updates on our projects and actions." data-sq="Merr përditësime për projektet dhe aksionet tona.">Добиј новини...</p>
                 <form id="newsletterForm" class="flex">
                     <input type="email" id="newsletterEmail" class="flex-grow border-2 border-light rounded-l-lg p-3 focus:border-accent bg-transparent text-white placeholder-light" placeholder="Е-пошта" data-mk="Е-пошта" data-en="Email" data-sq="Email">
                     <button type="submit" class="bg-accent text-primary font-bold py-3 px-6 rounded-r-lg hover:bg-lime-300 transition" data-mk="ПРЕТПЛАТИ СЕ" data-en="SUBSCRIBE" data-sq="ABONOHU">ПРЕТПЛАТИ СЕ</button>
@@ -517,18 +522,6 @@
     mobileBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('open');
     });
-
-    // Slider with Auto Play and Pause on Hover
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-    let sliderInterval = setInterval(nextSlide, 5000);
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }
-    document.querySelector('.slider').addEventListener('mouseenter', () => clearInterval(sliderInterval));
-    document.querySelector('.slider').addEventListener('mouseleave', () => sliderInterval = setInterval(nextSlide, 5000));
 
     // Counter Animation
     document.querySelectorAll('.counter-number').forEach(counter => {
@@ -636,6 +629,14 @@
     document.getElementById('uniqueDonorCount').innerText = emails.length.toLocaleString();
     let totalSaplings = parseInt(localStorage.getItem('totalSaplings') || '0');
     document.getElementById('totalSaplings').innerText = totalSaplings.toLocaleString();
+
+    // Pop-up JS
+    window.addEventListener('load', () => {
+        document.getElementById('popup').style.display = 'flex';
+    });
+    document.getElementById('popup-close').addEventListener('click', () => {
+        document.getElementById('popup').style.display = 'none';
+    });
 </script>
 </body>
 </html>
